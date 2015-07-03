@@ -88,6 +88,10 @@ exports.config = {
         paths.source + '/*.html',
         paths.source + '/**/*.html'
       ],
+      assets: [
+        paths.source + '/assets/*.*',
+        paths.source + '/assets/**/*.*'
+      ],
       json: [
         paths.source + '/*.json',
         paths.source + '/**/*.json'
@@ -98,7 +102,7 @@ exports.config = {
     declarationFiles: false,
     noExternalResolve: false,
     noImplicitAny: true,
-    target: 'ES6',
+    //target: 'ES6',
     module: 'amd',
     noLib: false,
     sortOutput: true,

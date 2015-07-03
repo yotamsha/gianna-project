@@ -126,13 +126,14 @@ class ToolbarController extends BaseController<IToolbarControllerScope> implemen
     {id: 'en_US'},
     {id: 'de_DE'},
     {id: 'pl_PL'},
-    {id: 'ru_RU'}
+    {id: 'ru_RU'},
+    {id: 'he_HE'}
   ];
 
   /**
    * Default language.
    */
-  static LANGUAGE:string = 'en_US';
+  static LANGUAGE:string = 'he_HE';
 
   /**
    * Available themes.

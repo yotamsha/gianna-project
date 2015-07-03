@@ -1,74 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>arts - the AngularJS and RequireJS using TypeScript Seed</title>
-  <meta name="description" content="arts - the AngularJS and RequireJS using TypeScript Seed">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="vendor/css/font-awesome.css"/>
-  <link rel="stylesheet" href="vendor/css/angular-material.css"/>
-  <link rel="stylesheet" href="vendor/css/default.css"/>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,700" rel="stylesheet"
-        type="text/css">
-  <link rel="stylesheet" href="css/styles.css"/>
-  <script data-main="config" src="vendor/js/require.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>arts - the AngularJS and RequireJS using TypeScript Seed</title>
+    <meta name="description" content="arts - the AngularJS and RequireJS using TypeScript Seed">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="vendor/css/font-awesome.css"/>
+    <link rel="stylesheet" href="vendor/css/angular-material.css"/>
+    <link rel="stylesheet" href="vendor/css/default.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,700" rel="stylesheet"
+          type="text/css">
+    <link rel="stylesheet" href="css/styles.css"/>
+    <script data-main="config" src="vendor/js/require.js"></script>
 </head>
 
-<body layout="column" role="document" md-theme="{{ vm.theme }}">
-
-<arts-toolbar>
-  <div layout="row">
-    <div>
-      <md-select ng-model="vm.application" class="md-toolbar-tools">
-        <md-select-label class="md-select-label">
-          <span class="ng-scope">{{ vm.application }}</span>
-        </md-select-label>
-        <md-option value="{{ application.id }}" ng-repeat="application in vm.applications">
-          <span>{{ application.name }}</span>
-        </md-option>
-      </md-select>
-    </div>
-    <div flex>
-
-    </div>
+<body role="document" md-theme="{{ vm.theme }}">
     <div layout="row">
-      <md-select ng-model="vm.theme" class="md-toolbar-tools">
-        <md-select-label class="md-select-label">
-          <span translate="load.partial.arts.theme.{{vm.theme}}" class="ng-scope"></span>
-        </md-select-label>
-        <md-option value="{{ theme.id }}" ng-repeat="theme in vm.themes">
-          <span translate="load.partial.arts.theme.{{ theme.id }}"></span>
-        </md-option>
-      </md-select>
+
+        <div class="header" layout="column">
+            <div>
+                <h1 class="title"><span translate="load.partial.arts.games.memory.title">Memory</span></h1>
+            </div>
+            <div>
+                <div layout="row" layout-align="end end">
+                    <!--<md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>-->
+                    <md-menu ng-repeat="gameOption in [1,2,3]" md-offset="5 70">
+                        <!-- Trigger element is a md-button with an icon -->
+                        <md-button class="md-fab md-mini md-primary game-option" ng-click="$mdOpenMenu($event)"
+                                   aria-label="Use Android">
+                            <span class="round-button-option" translate="load.partial.arts.letters.alef">alef</span>
+                        </md-button>
+                        <md-menu-content width="1">
+                            <md-menu-item>
+                                <md-button ng-click="doSomething()">
+                                    <span translate="load.partial.arts.letters.alef">alef</span>
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button ng-click="doSomething()">
+                                    <span translate="load.partial.arts.letters.beit">beit</span>
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button ng-click="doSomething()">
+                                    <span translate="load.partial.arts.letters.gimel">gimel</span>
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div layout="row">
-      <md-select ng-model="vm.language" class="md-toolbar-tools">
-        <md-select-label class="md-select-label">
-          <span translate="load.partial.arts.language.{{vm.language}}" class="ng-scope"></span>
-        </md-select-label>
-        <md-option value="{{ language.id }}" ng-repeat="language in vm.languages">
-          <span translate="load.partial.arts.language.{{ language.id }}"></span>
-        </md-option>
-      </md-select>
+    <div class="view-container" layout="column">
+        <div ng-view></div>
     </div>
-  </div>
-</arts-toolbar>
 
-<md-content class="content">
-  <div ng-view></div>
-</md-content>
 
-<footer class="footer">
-  <small>Powered by <a href="{{ vm.url }}">arts</a> <i class="fa fa-code-fork"></i><a
-      href="{{ vm.url }}/releases/tag/v{{ vm.version }}">{{ vm.version }}</a> <i class="fa fa-copyright"></i>
-    2015. Code licensed under the <a href="http://opensource.org/licenses/BSD-3-Clause" class="text-snow">BSD 3-clause
-      "New" or "Revised" License</a>.
-    Documentation licensed under <a class="text-snow" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
-  </small>
-</footer>
+    <div layout="row" class="site-footer">
 
+    </div>
 </body>
 
 </html>

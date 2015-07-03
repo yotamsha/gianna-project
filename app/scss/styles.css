@@ -1,0 +1,162 @@
+@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
+/*
+$primary-color : #ce1a53;
+*/
+body {
+  font-family: "Alef Hebrew",'Roboto', "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  margin: 0;
+  font-size: 14px;
+  /*  h1, h2, h3 {
+      color : $primary-color;
+    }*/ }
+  body md-menu-item {
+    height: 40px; }
+  body md-menu-content {
+    min-width: 50px;
+    width: 50px; }
+  body .md-button {
+    min-width: 40px; }
+
+.mobile-trigger {
+  display: none; }
+
+.header {
+  background-color: #689F38;
+  padding-right: 40px;
+  padding-left: 142px;
+  padding-bottom: 40px;
+  margin: 0px 0px 8px 0px;
+  box-shadow: 0px 7px 15px -3px rgba(0, 0, 0, 0.14), 0px 2px 2px 0px rgba(0, 0, 0, 0.098), 0px 1px 5px 0px rgba(0, 0, 0, 0.084);
+  color: #FFFFFF;
+  width: 100%;
+  direction: rtl;
+  height: 110px;
+  /*  .md-ripple-container {
+      background-color: $accentPalette-theme-amber;
+    }*/ }
+  .header .title {
+    font-size: 50px;
+    margin: 8px;
+    font-weight: 400; }
+  .header .round-button-option {
+    color: #FFFFFF; }
+  .header .game-option {
+    font-size: 28px; }
+
+.view-container {
+  height: 600px; }
+
+.game-container {
+  margin-top: 60px; }
+  .game-container .memory-card {
+    height: 150px;
+    width: 150px; }
+    .game-container .memory-card img {
+      background-size: contain; }
+    .game-container .memory-card span {
+      text-align: center;
+      font-size: 72px; }
+
+.site-footer {
+  height: 150px;
+  background-color: #689F38;
+  position: relative; }
+
+body[md-theme="green"] .header, body[md-theme="green"] .footer {
+  background: darkgreen; }
+body[md-theme="green"] .success {
+  background: greenyellow !important; }
+body[md-theme="green"] .error {
+  background: orangered !important; }
+body[md-theme="green"] .bottom-sheet {
+  background-color: darkgreen !important; }
+
+body[md-theme="blue"] .header, body[md-theme="blue"] .footer {
+  background: blue; }
+body[md-theme="blue"] .bottom-sheet {
+  background-color: blue !important; }
+
+body[md-theme="indigo"] .header, body[md-theme="indigo"] .footer {
+  background: darkblue; }
+body[md-theme="indigo"] .bottom-sheet {
+  background-color: darkblue !important; }
+
+@media handheld and (max-width: 400px), screen and (max-device-width: 400px), screen and (max-width: 800px) {
+  .header, .footer {
+    font-size: .7em;
+    height: auto; } }
+@media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 800px) {
+  .mobile-trigger {
+    display: inline-block; } }
+.footer {
+  text-align: center;
+  padding: 16px;
+  color: #fff; }
+  .footer small {
+    opacity: .55; }
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+    opacity: .55; }
+  .footer a:hover {
+    text-decoration: underline;
+    opacity: 1; }
+
+.sidebar-link {
+  display: block;
+  padding: 16px;
+  text-align: left;
+  width: 100%; }
+
+.header-buttons button {
+  margin-top: 12px; }
+.header-buttons .md-button.md-fab md-icon {
+  margin-top: -4px; }
+.header-buttons .header-buttons-spacer {
+  margin-right: 5px; }
+
+.success {
+  background: green !important; }
+
+.error {
+  background: red !important; }
+
+.bottom-sheet span {
+  color: #fff;
+  opacity: .55; }
+.bottom-sheet .bottom-sheet-text {
+  margin-top: 15px; }
+.bottom-sheet md-item {
+  margin-bottom: 0 !important;
+  height: inherit !important; }
+
+/*
+.carddemoBasicUsage md-card {
+  min-height: 150px;
+}
+*/
+.gridListdemoBasicUsage md-grid-list {
+  margin: 8px; }
+
+.gridListdemoBasicUsage .gray {
+  background: #f5f5f5; }
+
+.gridListdemoBasicUsage .green {
+  background: #b9f6ca; }
+
+.gridListdemoBasicUsage .yellow {
+  background: #ffff8d; }
+
+.gridListdemoBasicUsage .blue {
+  background: #84ffff; }
+
+.gridListdemoBasicUsage .purple {
+  background: #b388ff; }
+
+.gridListdemoBasicUsage .red {
+  background: #ff8a80; }
+
+.gridListdemoBasicUsage md-grid-tile {
+  transition: all 400ms ease-out 50ms; }
+
+/*# sourceMappingURL=styles.css.map */

@@ -6,7 +6,7 @@ import SetupComponent = require('./components/setup/Setup');
 
 class ApplicationConfiguration extends Arts.BaseApplicationConfiguration {
 
-  static NAME:string = 'com.github.gregoranders.arts.configuration';
+  static NAME:string = 'com.github.gregoranders.arts.configuration'
 
   constructor(protected $routeProvider:angular.route.IRouteProvider,
               protected $controllerProvider:angular.IControllerProvider,
@@ -17,7 +17,7 @@ class ApplicationConfiguration extends Arts.BaseApplicationConfiguration {
               protected $mdThemingProvider:ng.material.MDThemingProvider,
               protected localStorageServiceProvider:angular.local.storage.ILocalStorageServiceProvider) {
 
-    super(Application.NAME, 'en_US', 'green', $routeProvider, $controllerProvider, $provideService,
+    super(Application.NAME, 'he_HE', 'amber', $routeProvider, $controllerProvider, $provideService,
         $compileProvider, $translateProvider, $translatePartialLoaderProvider, $mdThemingProvider,
         localStorageServiceProvider);
 

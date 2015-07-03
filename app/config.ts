@@ -28,6 +28,7 @@ requirejs.config(
         'angular-translate-storage-local': 'vendor/js/angular-translate-storage-local',
         'highlight': 'vendor/js/highlight.pack',
         'jquery': 'vendor/js/jquery',
+        'lodash': 'vendor/js/lodash',
         'moment': 'vendor/js/moment',
         'text': 'vendor/js/text'
       },

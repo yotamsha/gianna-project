@@ -49,9 +49,9 @@ class BaseApplicationConfiguration extends BaseConfiguration {
         .primaryPalette('blue')
         .accentPalette('light-blue');
 
-    $mdThemingProvider.theme('indigo')
-        .primaryPalette('indigo')
-        .accentPalette('blue');
+    $mdThemingProvider.theme('amber')
+        .primaryPalette('amber')
+        .accentPalette('teal');
 
     $mdThemingProvider.theme('green')
         .primaryPalette('green')
@@ -64,8 +64,8 @@ class BaseApplicationConfiguration extends BaseConfiguration {
         .setPrefix(id)
         .setNotify(true, true);
 
-    var theme = localStorage.getItem(id + '.theme'),
-        language = localStorage.getItem(id + '.language');
+    var theme = localStorage.getItem(id + '.theme'),language;
+        //language = localStorage.getItem(id + '.language');
 
     if (!language) {
       language = defaultLanguage;

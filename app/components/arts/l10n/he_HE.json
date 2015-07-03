@@ -1,0 +1,42 @@
+{
+  "load": {
+    "partial": {
+      "arts": {
+        "language": {
+          "en_US": "Englisch",
+          "de_DE": "Deutsch",
+          "pl_PL": "Polnisch",
+          "ru_RU": "Russisch"
+        },
+        "theme": {
+          "blue": "Blau",
+          "indigo": "Indigo",
+          "green": "Gr&uuml;n"
+        },
+        "about": {
+          "setupandinstall": "Einrichtung und Installation",
+          "setup": "Einrichtung",
+          "installation": "Installation"
+        },
+        "generic": {
+          "refresh": "Aktualisieren",
+          "success": "Erfolgreich",
+          "error": "Fehler",
+          "tools": "Werkzeuge"
+        },
+        "games" : {
+          "memory" : {
+            "title" : "&#1488;&#1464;&#1488;&#1464;&#1488;&#1464;&#1488;&#1464;"
+          }
+        },
+        "letters" : {
+          "alef" : "&#1488",
+          "beit" : "&#1489",
+          "gimel" : "&#1490",
+          "dalet" : "&#1491"
+        }
+
+      }
+    }
+  }
+}

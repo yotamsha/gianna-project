@@ -3,7 +3,7 @@
  */
 //import {bind} from 'angular2/di';
 //var _ = require('lodash');
-import _ = require('lodash'); 
+import _ = require('lodash');
 
 function toUnicode(theString) {
   var unicodeString = '';

@@ -1,18 +1,8 @@
-[![Dependency Status][daviddm-image]][daviddm-url]
-[![NPM version][npm-image]][npm-url]
-[![Downloads][downloads-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Coverage Status][coverall-image]][coverall-url]
-[![License][license-image]][license-url]
-[![Release][release-image]][release-url]
-[![Tag][tag-image]][tag-url]
-[![Node][node-image]][node-url]
-[![Issues][issues-image]][issues-url]
-[![Gitter][gitter-image]][gitter-url]
+# gianna-project
+A small hebrew learning app
 
-# angular-require-typescript-seed
 **the AngularJS and RequireJS using TypeScript Seed**
-***0.0.8***
+***0.0.9***
 
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app
@@ -27,7 +17,7 @@ In order to build ensure that you have [Git](http://git-scm.com/downloads) and [
 Clone a copy of the repo:
 
 ```
-git clone https://github.com/gregoranders/arts.git
+git clone https://github.com/yotamsha/gianna-project.git
 ```
 
 Change to the arts directory:

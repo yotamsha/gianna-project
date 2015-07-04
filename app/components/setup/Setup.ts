@@ -1,6 +1,7 @@
 import Arts = require("../arts/Arts");
 
 import IndexController = require("./controller/IndexController");
+import VocabularyController = require("./../vocabularyEditor/VocabularyController");
 import Component = require("./Component");
 
 class ModuleConfiguration extends Arts.BaseConfiguration {
@@ -24,6 +25,11 @@ class ModuleConfiguration extends Arts.BaseConfiguration {
       name: 'index',
       templateUrl: basePath + 'view/main.html',
       controller: IndexController
+    });
+    super.when('/editor', {
+      name: 'vocabulary',
+      templateUrl: basePath + '../vocabularyEditor/list.html',
+      controller: VocabularyController
     });
   }
 }

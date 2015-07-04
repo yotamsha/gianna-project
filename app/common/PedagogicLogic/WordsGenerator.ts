@@ -40,7 +40,7 @@ export class Exception extends Error {
   }
 }
 
-enum PosEnum  {
+export enum PosEnum  {
   FIRST,
   MIDDLE,
   LAST
@@ -85,6 +85,7 @@ interface IWord {
 }
 
 interface IVocabularyGenerator {
+  generateGameConstraints (game : string, params: Object) : any[];
   filter(vocabulary : Array<Word>, wConstraints : Array<IWordConstraint>, wordsCount : number) : Array<Word>;
   groupWords (vocabulary : Array<Word>, groupingConstraints  :GroupConstraint) : Array<any>;
 }
@@ -120,6 +121,7 @@ export class WordConstraint implements IWordConstraint {
   constructor (public level : number, public lettersConstraints : Array<ILetterConstraint> = null) {
 
   }
+
   toString () {
     var str = "";
     for (let letter of this.lettersConstraints) {
@@ -136,6 +138,7 @@ export class LetterConstraint implements ILetterConstraint {
       console.log("randomly generated letter constraint - name: ",this.name);
     }
   }
+
   toString() {
     return this.name + ", " + this.sound + ", " + this.pos;
   }
@@ -166,6 +169,7 @@ export class Letter implements ILetter {
     var soundStr = SoundEnum[this.sound] ? SoundEnum[this.sound] : "";
     return (LetterEnum[this.name]) + soundStr + ", in " + PosEnum[this.pos];
   }
+
   static testConstraint() {
 
     var l = new Letter("ALEF",PosEnum.MIDDLE,"SEGOL");
@@ -183,6 +187,7 @@ export class Letter implements ILetter {
 export class Word implements IWord {
 
   constructor (public str: string, public letters : Array<ILetter>, public level : number, public imgPath: string = null) {
+
   }
 
   /**
@@ -213,9 +218,11 @@ export class Word implements IWord {
     }
     return (level && lettersValid);
   }
+
   toString() {
     return this.str + " - image path : " +this.imgPath;
   }
+
   static testConstraint() {
 
     var w = new Word("אָבֶ",[new Letter("ALEF",PosEnum.FIRST,"PATAH")],1);
@@ -238,12 +245,49 @@ export class Word implements IWord {
   }
 
 }
-
+// class which generates variety of vocabularies according to constraints on the words.
 export class VocabularyGenerator implements IVocabularyGenerator {
 
   constructor () {
   }
 
+  generateGameConstraints (game : string, params: Object = null) {
+    // a memory game constraints descriptor contains:
+    // pairsNum , availableLetters (optional) , availableSounds (optional), array of combined letter constraints(optional).
+    var paramsObj = {pairsNum : 4};
+    // for each pair, generate a word constraint with a different opening letter. and with one
+    // of the available sounds.
+
+    // Words constraints:
+    var sound = new LetterConstraint(null,null,"PATAH");
+
+    var alefCT = new WordConstraint(1, [sound ,new LetterConstraint("ALEF")]);
+    var beitCT = new WordConstraint(1, [sound, new LetterConstraint("BEIT")]);
+    var gimelCT = new WordConstraint(1, [sound, new LetterConstraint("GIMEL")]);
+
+
+   // var f_patah_ct = new WordConstraint(1, [wildcard_patah_lc]);
+
+    // for each pair, generate a word constraint with a different opening letter.
+
+/*    var f_a_patah_ct = new WordConstraint(1, [alefCT]);
+    var f_b_patah_ct = new WordConstraint(1, [beitCT]);
+    var f_c_patah_ct = new WordConstraint(1, [gimelCT]);*/
+
+
+    var f_a_patah_2g:GroupConstraint = new GroupConstraint(2,alefCT);
+    var f__b_patah_2g:GroupConstraint = new GroupConstraint(2,beitCT);
+    var f_c_patah_2g:GroupConstraint = new GroupConstraint(2,gimelCT);
+
+    //var f_c_patah_3g:GroupConstraint = new GroupConstraint(3,f_c_patah_ct);
+    var nested_f_patah_2g:GroupConstraint = new GroupConstraint(null,null,
+        [{copies : 1,group : f_a_patah_2g},{copies : 1,group : f__b_patah_2g},{copies : 1,group : f_c_patah_2g}]);
+
+/*    var nested_f_patah_3g:GroupConstraint = new GroupConstraint(null,null,
+        [{copies : 1,group : f_a_patah_2g},{copies : 1,group : f__b_patah_2g},{copies : 1,group : f_c_patah_3g}]);*/
+    return nested_f_patah_2g;
+
+  }
   /**
    *
    * @param vocabulary A set of words to filter
@@ -251,7 +295,8 @@ export class VocabularyGenerator implements IVocabularyGenerator {
    * @param wordsCount Number of words that function should return
    * @returns {Array} All words that passed all of the given constraints.
    */
-  filter (vocabulary : Array<Word>, wConstraints : Array<IWordConstraint>, wordsCount : number = null) {
+  filter (vocabulary : Array<Word>, wConstraints : Array<IWordConstraint>,
+          wordsCount : number = null, copyWord :boolean = false ) {
     if (wordsCount === 0){
       throw new Exception("Max words must be greater than zero." );
 
@@ -268,6 +313,11 @@ export class VocabularyGenerator implements IVocabularyGenerator {
         }
       }
       if (wordPasses){// add a word which passes all the constraints
+        //var copyWord = true;
+        if (copyWord && max){
+          filteredWords = _.fill(Array(max), word);
+          break;
+        }
         filteredWords.push(word);
         count++;
         if (max !== null && (count >= max)){
@@ -323,13 +373,6 @@ export class VocabularyGenerator implements IVocabularyGenerator {
       // create a new children array in the result Array and pass it to the recursive function along with the accumulatedWC.
 
     }
-/*    var memoryConstraint:IGroupConstraint = {};
-    memoryConstraint.constraint = new WordConstraint(null,[new LetterConstraint(SoundEnum.KAMATZ)]);
-    memoryConstraint.children = [
-      {copies : 8,
-        group:
-          new GroupConstraint(2, new WordConstraint(null,[new LetterConstraint("ALEF")]))
-      }];*/
     //var groupingConstraints = memoryConstraint;
     var result = [];
     var result = recuresivelyGroup(groupingConstraints,[],result);
@@ -370,18 +413,14 @@ export class VocabularyGenerator implements IVocabularyGenerator {
       console.log("generated letter : " + letter.toString());
     }
 
-
     // if it's a sound, we have an error in word structure.
 
-
-/*    for (let node of wordsTree ) {
-
-    }*/
     var word = new Word(str, letters , 1, imgPath);
     console.log("generated word : " + word.toString());
 
     return word;
   }
+
   static printTree (wordsTree : Array<any>) {
     var str = "";
     var self =this;
@@ -487,28 +526,6 @@ export class VocabularyGenerator implements IVocabularyGenerator {
 }
 
 
-/*
-var ABA:IWord = {
-  level : 1,
-  letters : [
-    {
-      name : Letter.ALEF,
-      pos : Pos.FIRST,
-      sound : Sound.PATAH
-    },
-    {
-      name : Letter.BEIT,
-      pos : Pos.MIDDLE,
-      sound : Sound.KAMATZ
-    },
-    {
-      name : Letter.ALEF,
-      pos : Pos.LAST,
-      sound : Sound.NONE
-    }
-  ]
-};
-*/
 /*export var PedadogicLogicInjectables = [
   bind(Letter).toClass(Letter)
 ];*/

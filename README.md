@@ -1,12 +1,13 @@
 # gianna-project
 A small hebrew learning app
 
-**the AngularJS and RequireJS using TypeScript Seed**
-***0.0.9***
+**Based on the AngularJS and RequireJS using TypeScript Seed**
+***0.0.8***
 
 
-This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app
+This project is based on an application skeleton for a typical [AngularJS](http://angularjs.org/) web app
 using [RequireJS](http://requirejs.org/) written in [TypeScript](http://www.typescriptlang.org/).
+Thanks to Gregor Sanders (https://github.com/gregoranders/arts)
 
 
 ## Building

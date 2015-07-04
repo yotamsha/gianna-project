@@ -7,7 +7,7 @@ A small hebrew learning app
 
 This project is based on an application skeleton for a typical [AngularJS](http://angularjs.org/) web app
 using [RequireJS](http://requirejs.org/) written in [TypeScript](http://www.typescriptlang.org/).
-Thanks to Gregor Sanders (https://github.com/gregoranders/arts)
+Thanks to Gregor Anders (https://github.com/gregoranders/arts)
 
 
 ## Building

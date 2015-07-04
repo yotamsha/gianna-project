@@ -1,19 +1,51 @@
     <section layout="row" class="game-container"  layout-align="center center">
         <div style="height: 500px; min-width: 800px">
+
+
+            <div>
+                game state:
+                {{vm.game.state.gameState.phase}}
+                {{vm.game.state.gameState.lockCards}}
+
+
+                <div  ng-init="items = ['home','settings','other']">
+                    <select ng-model="selection" ng-options="item for item in items">
+                    </select>
+                    <code>selection={{selection}}</code>
+                    <hr/>
+                    <div class="animate-switch-container"
+                         ng-switch on="selection">
+                        <div class="animate-switch" ng-switch-when="settings">Settings Div</div>
+                        <div class="animate-switch" ng-switch-when="home">Home Span</div>
+                        <div class="animate-switch" ng-switch-default>default</div>
+                    </div>
+                </div>
+
+            </div>
+
             <md-grid-list class="gridListdemoBasicUsage" md-cols="4" md-row-height="200px" md-col-width="150px"
                           md-gutter="12px" md-gutter-gt-sm="8px">
 
-                <md-grid-tile ng-repeat="card in [{src : 'assets/fish.PNG'},
-                {src : 'assets/basket.PNG'},{src : 'assets/Turtle.PNG'},{letter : '&#1488;'}]"
+                <md-grid-tile ng-repeat="card in vm.game.state.gameState.board" ng-animate=" 'animate' "
                               md-rowspan="1" md-colspan="1">
                     <md-card>
-                        <md-card-content layout="row" layout-align="center center" class="memory-card">
-                            <img ng-if="card.src" ng-src="{{card.src}}"/>
-                            <span ng-if="card.letter">
-                              {{card.letter}}
+                        <md-card-content layout="row" layout-align="center center" ng-disabled="vm.game.state.gameState.lockCards" ng-click="vm.cardClicked($index)" class="memory-card">
+<!--                           <div class="animate-switch-container" ng-switch on="card.state">
+&lt;!&ndash;
+                               ng-show="card.state === 'BACK'"
+&ndash;&gt;
+                               <img ng-switch-default class="card-back animate-switch" src="assets/card-back-icon.png"/>
+                               <img ng-switch-when="PENDING" class="animate-switch" ng-src="{{card.imgSrc}}" />
+&lt;!&ndash;
+                               <span ng-show="card.state !== 'BACK' && card.letter" ng-bind-html="card.letter" ng-animate="{show: 'animate-enter', hide: 'animate-leave'}" ></span>
+&ndash;&gt;
 
-                            </span>
 
+                           </div>-->
+                            <img class="card-back" ng-show="card.state === 'BACK'" src="assets/card-back-icon.png" ng-animate="{show: 'animate-enter', hide: 'animate-leave'}"/>
+                            <img ng-show="card.state !== 'BACK' && card.imgSrc" ng-src="{{card.imgSrc}}" ng-animate="{show: 'animate-enter', hide: 'animate-leave'}"/>
+                            <span ng-show="card.state !== 'BACK' && card.letter" ng-bind-html="card.letter" ng-animate="{show: 'animate-enter', hide: 'animate-leave'}" ></span>
+                            {{card.type}}
                         </md-card-content>
 
                     </md-card>
@@ -24,6 +56,7 @@
             </md-grid-list>
 
         </div>
+
     </section>
 
 

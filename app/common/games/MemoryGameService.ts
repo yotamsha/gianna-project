@@ -1,5 +1,7 @@
 // <reference path="../../../../typings/tsd.d.ts" />
 //import {bind, Inject} from 'angular2/di';
+//import bind from 'angular';
+
 import {Store} from '../Store';
 import {Letter} from '../pedagogicLogic/WordsGenerator';
 import {Word} from '../pedagogicLogic/WordsGenerator';
@@ -7,10 +9,19 @@ import {VocabularyGenerator} from '../pedagogicLogic/WordsGenerator';
 import {LetterConstraint} from '../pedagogicLogic/WordsGenerator';
 import {WordConstraint} from '../pedagogicLogic/WordsGenerator';
 import {GroupConstraint} from '../pedagogicLogic/WordsGenerator';
+import IService = require('../../components/arts/interface/IService');
+import angular = require('angular');
+
 
 //Letter.testConstraint();
 //Word.testConstraint();
 //VocabularyGenerator.test();
+VocabularyGenerator.createWordFromString("פַרָה", "assets/fish.png");
+VocabularyGenerator.createWordFromString("דָּג", "assets/fish.png");
+VocabularyGenerator.createWordFromString("סַל", "assets/basket.png");
+VocabularyGenerator.createWordFromString("צָב", "assets/basket.png");
+
+/*
 VocabularyGenerator.testGrouping();
 var alefCT = new WordConstraint(1, [new LetterConstraint("ALEF")]);
 var beitCT = new WordConstraint(1, [new LetterConstraint("BEIT")]);
@@ -26,6 +37,7 @@ var f_c_patah_2g:GroupConstraint = new GroupConstraint(2,f_c_patah_ct);
 
 var nested_f_patah_2g:GroupConstraint = new GroupConstraint(null,null,
   [{copies : 1,group : f_a_patah_2g},{copies : 1,group : f__b_patah_2g},{copies : 1,group : f_c_patah_2g}]);
+*/
 
 var CardStateEnum = {
   BACK : "BACK",
@@ -75,86 +87,97 @@ interface IMemoryCard {
  */
 let memoryGameModel:IGameModel = {
   gameState : {
+
     board: [
       {
         word : "aba",
-        imgSrc : "imgSrc",
+        imgSrc : "assets/fish.PNG",
         meta : {},
         type : CardTypeEnum.ONE,
         state: CardStateEnum.BACK
       },
       {
         word : "ima",
-        imgSrc : "imgSrc",
+        imgSrc : "assets/fish.PNG",
         meta : {},
         type : CardTypeEnum.TWO,
         state:  CardStateEnum.BACK
       },
       {
         word : "gamal",
-        imgSrc : "imgSrc",
+        imgSrc : "assets/fish.PNG",
         meta : {},
         type : CardTypeEnum.THREE,
         state:  CardStateEnum.BACK
       },
       {
         word : "zvuv",
-        imgSrc : "imgSrc",
+        imgSrc : "assets/fish.PNG",
         meta : {},
         type : CardTypeEnum.FOUR,
         state:  CardStateEnum.BACK
       },
       {
         word : "aba2",
-        imgSrc : "imgSrc",
+        imgSrc : "assets/fish.PNG",
         meta : {},
         type : CardTypeEnum.ONE,
         state: CardStateEnum.BACK
       },
       {
         word : "ima2",
-        imgSrc : "imgSrc",
+        //imgSrc : "imgSrc",
         meta : {},
         type : CardTypeEnum.TWO,
-        state:  CardStateEnum.BACK
+        state:  CardStateEnum.BACK,
+        letter :"&#1488;"
       },
       {
         word : "gamal2",
-        imgSrc : "imgSrc",
+        //imgSrc : "imgSrc",
         meta : {},
         type : CardTypeEnum.THREE,
-        state:  CardStateEnum.BACK
+        state:  CardStateEnum.BACK,
+        letter :"&#1488;"
       },
       {
         word : "zvuv2",
-        imgSrc : "imgSrc",
+        //imgSrc : "imgSrc",
         meta : {},
         type : CardTypeEnum.FOUR,
-        state:  CardStateEnum.BACK
+        state:  CardStateEnum.BACK,
+        letter :"&#1488;"
       }
     ],
     pendingCardIndex : -1,
-    phase : GameStateEnum.RUNNING
+    phase : GameStateEnum.RUNNING,
+    lockCards : false
   }
 
 };
 
 export class MemoryGameService extends Store {
+  static $inject = ['$q']; // This should do it
+  //ROOTSCOPE : Object;
+
   // we shouldn't access ._state or ._setState outside of the class
-  constructor() {
+  constructor( private $q: any) {
+    //this.ROOTSCOPE = $rootScope;
     // use Store class as a helper
     super(memoryGameModel);
   }
-  getState () {
-    return super.getState();
-  }
-  init(predefinedValues) {
+
+  init() {
+    var gameState = this.get('gameState');
+    gameState.board = _.shuffle(gameState.board);
+    this.set('gameState', gameState);
 
   }
 
   chooseCard(index) {
+    var deferred = this.$q.defer();
     var chosenCard,pendingCard;
-    var gameState = this.getStateProp('gameState');
+    var gameState = this.get('gameState');
 
     console.log("board: ",gameState.board);
     console.log("phase: ",gameState.phase);
@@ -175,17 +198,27 @@ export class MemoryGameService extends Store {
         if ( this.isDone(gameState.board) ){
           gameState.phase = GameStateEnum.ENDED;
         }
-        this.setStateProp('gameState', gameState);
-
+        this.set('gameState', gameState);
+        deferred.resolve();
       } else {
+        chosenCard.state = CardStateEnum.FLIPPED;
         gameState.pendingCardIndex = -1;
-        pendingCard.state = CardStateEnum.BACK;
-        chosenCard.state = CardStateEnum.BACK;
+        gameState.lockCards = true;
+        setTimeout(function(){
+          pendingCard.state = CardStateEnum.BACK;
+          chosenCard.state = CardStateEnum.BACK;
+          deferred.resolve();
+          gameState.lockCards = false;
+
+        },3000)
+
       }
     } else {
       chosenCard.state = CardStateEnum.PENDING;
       gameState.pendingCardIndex = index;
+      deferred.resolve();
     }
+    return deferred.promise;
   }
 
   isPaired(card1: IMemoryCard,card2: IMemoryCard) {
@@ -205,7 +238,7 @@ export class MemoryGameService extends Store {
 }
 
 
-export var memoryGameInjectables = [
+/*export var memoryGameInjectables = [
  // bind('memoryGameModel').toValue(memoryGameModel),
- // bind(MemoryGameService).toClass(MemoryGameService)
-];
+ bind(MemoryGameService).toClass(MemoryGameService)
+];*/

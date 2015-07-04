@@ -102,7 +102,7 @@ exports.config = {
     declarationFiles: false,
     noExternalResolve: false,
     noImplicitAny: true,
-    //target: 'ES6',
+    target: 'ES5',
     module: 'amd',
     noLib: false,
     sortOutput: true,

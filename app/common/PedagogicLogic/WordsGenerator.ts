@@ -79,6 +79,7 @@ interface IWord {
   level : number;
   letters : Array<ILetter>;
   str : string;
+  imgPath : string;
   has (constraints) : boolean;
 
 }
@@ -144,7 +145,8 @@ export class Letter implements ILetter {
   symbol : string;
 
   constructor (public name: string, public pos : PosEnum, public sound : string) {
-    this.symbol = LetterEnum[name] + SoundEnum[sound];
+    var soundStr = SoundEnum[sound] ? SoundEnum[sound] : "";
+    this.symbol = LetterEnum[name] + soundStr;
   }
 
   /**
@@ -161,7 +163,8 @@ export class Letter implements ILetter {
   }
 
   toString() {
-    return (LetterEnum[this.name]) + (SoundEnum[this.sound]) + ", in " + PosEnum[this.pos];
+    var soundStr = SoundEnum[this.sound] ? SoundEnum[this.sound] : "";
+    return (LetterEnum[this.name]) + soundStr + ", in " + PosEnum[this.pos];
   }
   static testConstraint() {
 
@@ -179,7 +182,7 @@ export class Letter implements ILetter {
 
 export class Word implements IWord {
 
-  constructor (public str: string, public letters : Array<ILetter>, public level : number) {
+  constructor (public str: string, public letters : Array<ILetter>, public level : number, public imgPath: string = null) {
   }
 
   /**
@@ -211,7 +214,7 @@ export class Word implements IWord {
     return (level && lettersValid);
   }
   toString() {
-    return this.str;
+    return this.str + " - image path : " +this.imgPath;
   }
   static testConstraint() {
 
@@ -335,6 +338,50 @@ export class VocabularyGenerator implements IVocabularyGenerator {
 
   }
 
+  static createWordFromString (str : string, imgPath : string) {
+    function getSound (char){
+      return "KAMATZ";
+    }
+    function getLetterName(str){
+      return "ALEF";
+    }
+    var letters : Array<Letter> = [];
+
+    // iterate over the string array
+    // for each character :
+    for (var i = 0, len = str.length; i < len; i=i+2) {
+      let pos = (i === 0) ? PosEnum.FIRST : ((i === str.length -1) ? PosEnum.LAST : PosEnum.MIDDLE);
+      let letterSymbol = str[i];
+      let sound;
+      console.log("parsing letter: ",str[i]);
+      if (true){ // if it's a letter:
+        var nextChar = str[i+1] ;
+        name = getLetterName(letterSymbol);
+        if (nextChar){ // check the next character, if it's a sound add it to the letter Object. o/w set the sound to NONE.
+          sound = getSound(nextChar);
+          var letter = new Letter(name,pos,sound);
+
+        } else {
+          var letter = new Letter(name,pos,null);
+        }
+
+      }
+      letters.push(letter); // add it to the letters array (both the letter and the sound symbols together)
+      console.log("generated letter : " + letter.toString());
+    }
+
+
+    // if it's a sound, we have an error in word structure.
+
+
+/*    for (let node of wordsTree ) {
+
+    }*/
+    var word = new Word(str, letters , 1, imgPath);
+    console.log("generated word : " + word.toString());
+
+    return word;
+  }
   static printTree (wordsTree : Array<any>) {
     var str = "";
     var self =this;

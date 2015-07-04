@@ -30,6 +30,8 @@ class ApplicationConfiguration extends Arts.BaseApplicationConfiguration {
     super.initTranslations(basePath);
 
     component.directive(Arts.ToolbarDirective);
+    component.service(Arts.TestService);
+
   }
 }
 

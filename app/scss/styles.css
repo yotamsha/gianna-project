@@ -43,6 +43,50 @@ body {
   .header .game-option {
     font-size: 28px; }
 
+/*.animate-switch-container {
+  position:relative;
+  background:white;
+  border:1px solid black;
+  height:40px;
+  overflow:hidden;
+}*/
+/*.animate-switch.ng-animate {
+  -webkit-transition: 1s linear all; /!* Chrome *!/
+  transition: 1s linear all;
+  opacity: 0;
+}
+
+.animate-switch.ng-leave.ng-leave-active,
+.animate-switch.ng-enter {
+  opacity: 1;
+}
+.animate-switch.ng-leave,
+.animate-switch.ng-enter.ng-enter-active {
+  opacity: 0;
+}*/
+/*.animate-switch {
+  padding:10px;
+}*/
+/*
+.animate-switch.ng-animate {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+
+/!*  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;*!/
+}
+
+.animate-switch.ng-leave.ng-leave-active,
+.animate-switch.ng-enter {
+  top:-50px;
+}
+.animate-switch.ng-leave,
+.animate-switch.ng-enter.ng-enter-active {
+  top:0;
+}*/
 .view-container {
   height: 600px; }
 
@@ -56,6 +100,8 @@ body {
     .game-container .memory-card span {
       text-align: center;
       font-size: 72px; }
+    .game-container .memory-card .card-back {
+      height: 77px; }
 
 .site-footer {
   height: 150px;

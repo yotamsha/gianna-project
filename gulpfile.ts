@@ -86,7 +86,7 @@ gulp.task('build:html', function () {
         false).pipe(connect.reload());
 });
 
-// HTML related tasks
+// assets related tasks
 gulp.task('build:assets', function () {
     return func.build.copy(
         config.paths.build.development + '/assets',

@@ -1,23 +1,24 @@
 /// <reference path="../../typings/tsd.d.ts" />
+
 export class Store {
   // we shouldn't access ._state
   constructor(private _state: any) {}
   // Ensure Immutable state
-  setState(newState) {
+  set state(newState) {
     // Add ImmutableJS and use it
     this._state = deepRefCopy(this._state, newState);
   }
-  getState() {
+  get state() {
     return this._state;
   }
 
   // Ensure Immutable state
-  getStateProp(type?: string) {
-    var state = deepCopy(this._state);
+  get(type?: string) {
+    var state = deepCopy(this.state);
     return (type) ? state[type] : state;
   }
-  setStateProp(prop: any, value?: any) {
-    this._state = (value === undefined) ? prop : {
+  set(prop: any, value?: any) {
+    this.state = (value === undefined) ? prop : {
       [prop]: value
     }
   }//set

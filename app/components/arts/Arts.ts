@@ -22,6 +22,8 @@ export import BaseService = require('./BaseService');
 export import ArtsVersion = require('./ArtsVersion');
 
 export import ToolbarDirective = require('./base/directive/ToolbarDirective');
+export import TestService = require('../../common/games/TestService');
+
 'use strict';
 
 interface IApplicationArray {

@@ -65,6 +65,10 @@ body {
   .game-option {
     font-size: 28px;
   }
+  .game-option-action {
+    margin: 14px;
+
+  }
 
 
 }
@@ -122,8 +126,8 @@ body {
   height: 600px;
   */
 }
-.game-container {
 
+.game-container {
 
   margin-top: 60px;
   .memory-card {
@@ -142,11 +146,22 @@ body {
   }
 }
 
+.vocabulary-editor-container {
+  width: 800px;
+  .editor-item-image {
+    background-size: contain;
+  }
+  .editor-item-input {
+    height: 30px;
+  }
+}
+
 .site-footer {
   height: 150px;
   background-color: $backgroundPalette-theme-amber;
   position: relative;
 }
+
 body[md-theme="green"] {
   .header, .footer {
     background: $bg-color-theme-green;

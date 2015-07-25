@@ -3,6 +3,8 @@
 //import bind from 'angular';
 
 import {Store} from '../Store';
+import {VocabularyEditorService} from '../../components/vocabularyEditor/VocabularyEditorService';
+
 import {Letter} from '../pedagogicLogic/WordsGenerator';
 import {Word} from '../pedagogicLogic/WordsGenerator';
 import {VocabularyGenerator} from '../pedagogicLogic/WordsGenerator';
@@ -18,10 +20,10 @@ import angular = require('angular');
 //Letter.testConstraint();
 //Word.testConstraint();
 //VocabularyGenerator.test();
-VocabularyGenerator.createWordFromString("פַרָה", "assets/fish.png");
+/*VocabularyGenerator.createWordFromString("פַרָה", "assets/fish.png");
 VocabularyGenerator.createWordFromString("דָּג", "assets/fish.png");
 VocabularyGenerator.createWordFromString("סַל", "assets/basket.png");
-VocabularyGenerator.createWordFromString("צָב", "assets/basket.png");
+VocabularyGenerator.createWordFromString("צָב", "assets/basket.png");*/
 
 /*
  VocabularyGenerator.testGrouping();
@@ -76,67 +78,6 @@ interface IMemoryCard {
 let memoryGameModel:IGameModel = {
     gameState: {
 
-        board: [
-            {
-                word: "aba",
-                imgSrc: "assets/fish.PNG",
-                meta: {},
-                type: CardTypeEnum.ONE,
-                state: CardStateEnum.BACK
-            },
-            {
-                word: "ima",
-                imgSrc: "assets/fish.PNG",
-                meta: {},
-                type: CardTypeEnum.TWO,
-                state: CardStateEnum.BACK
-            },
-            {
-                word: "gamal",
-                imgSrc: "assets/fish.PNG",
-                meta: {},
-                type: CardTypeEnum.THREE,
-                state: CardStateEnum.BACK
-            },
-            {
-                word: "zvuv",
-                imgSrc: "assets/fish.PNG",
-                meta: {},
-                type: CardTypeEnum.FOUR,
-                state: CardStateEnum.BACK
-            },
-            {
-                word: "aba2",
-                imgSrc: "assets/fish.PNG",
-                meta: {},
-                type: CardTypeEnum.ONE,
-                state: CardStateEnum.BACK
-            },
-            {
-                word: "ima2",
-                //imgSrc : "imgSrc",
-                meta: {},
-                type: CardTypeEnum.TWO,
-                state: CardStateEnum.BACK,
-                letter: "&#1488;"
-            },
-            {
-                word: "gamal2",
-                //imgSrc : "imgSrc",
-                meta: {},
-                type: CardTypeEnum.THREE,
-                state: CardStateEnum.BACK,
-                letter: "&#1488;"
-            },
-            {
-                word: "zvuv2",
-                //imgSrc : "imgSrc",
-                meta: {},
-                type: CardTypeEnum.FOUR,
-                state: CardStateEnum.BACK,
-                letter: "&#1488;"
-            }
-        ],
         pendingCardIndex: -1,
         phase: GameStateEnum.RUNNING,
         lockCards: false
@@ -147,12 +88,15 @@ let memoryGameModel:IGameModel = {
 export class MemoryGameService extends Store {
     static $inject = ['$q']; // This should do it
     //ROOTSCOPE : Object;
-
+    private vocabularyEditorService : VocabularyEditorService;
     // we shouldn't access ._state or ._setState outside of the class
-    constructor(private $q:any) {
+    constructor(private $q:any,$http : any) {
         //this.ROOTSCOPE = $rootScope;
         // use Store class as a helper
         super(memoryGameModel);
+        this.vocabularyEditorService = new VocabularyEditorService($http);
+
+
     }
 
     init() {
@@ -162,45 +106,50 @@ export class MemoryGameService extends Store {
         var generator = new VocabularyGenerator();
         var paramsObj = {}; // get parameters from user selected properties.
         // Set up a constraints object for memory game.
-        gameConstraints = generator.generateGameConstraints("MEMORY", paramsObj);
         console.log("generated constraints : ", gameConstraints);
         // Apply the constraints on the vocabulary to get a grouping for the words.
 
-        var a = new Word("דָּג", [new Letter("ALEF", PosEnum.FIRST, "PATAH")], 1,'assets/fish.png');
-        var ab = new Word("דָּג", [new Letter("ALEF", PosEnum.FIRST, "PATAH"), new Letter("BEIT", PosEnum.MIDDLE, "PATAH")], 1,'assets/fish.png');
+        var systemWords =  _.shuffle(this.vocabularyEditorService.getWordsObjects());
+        var paramsObj : {} = {
+            pairsNum : 6,
+            position : PosEnum.FIRST,
+            lettersToSearch: ['ALEF','VEIT','GIMEL','NUN','DALET','HET'],
+            type1 : 'img',
+            type2 : 'img'
+        };
+        console.log("systemWords",systemWords);
+        var i = 0;
+        while (i < 100 && !gameGroups){
+            console.log("iteration "+i + ", getting words..");
+            try {
+                gameConstraints = generator.generateGameConstraints("MEMORY", paramsObj);
+                gameGroups = generator.groupWords(systemWords, gameConstraints);
 
-        var b = new Word("סַל", [new Letter("BEIT", PosEnum.FIRST, "PATAH")], 1,'assets/basket.png');
-        var bd = new Word("סַל", [new Letter("BEIT", PosEnum.FIRST, "PATAH"), new Letter("DALET", PosEnum.MIDDLE, "PATAH")], 1,'assets/basket.png');
+            }catch(e){
+                i++;
+            }
+        }
 
-        var c = new Word("צָב", [new Letter("GIMEL", PosEnum.FIRST, "PATAH")], 1,'assets/turtle.png');
-        var cd = new Word("צָב", [new Letter("GIMEL", PosEnum.FIRST, "PATAH"), new Letter("DALET", PosEnum.FIRST, "PATAH")], 1,'assets/turtle.png');
-/*        var systemWords = [
-        VocabularyGenerator.createWordFromString("דָּג", "assets/fish.png"),
-        VocabularyGenerator.createWordFromString("דָּג", "assets/fish.png"),
-        VocabularyGenerator.createWordFromString("סַל", "assets/turtle.png"),
-        VocabularyGenerator.createWordFromString("סַל", "assets/turtle.png"),
-        VocabularyGenerator.createWordFromString("צָב", "assets/basket.png"),
-        VocabularyGenerator.createWordFromString("צָב", "assets/basket.png")];*/
-
-         var systemWords = [a, ab, b, bd, c, cd];
-        gameGroups = generator.groupWords(systemWords, gameConstraints);
-        console.log("gameTree", VocabularyGenerator.printTree(gameGroups));
+        //console.log("gameTree", VocabularyGenerator.printTree(gameGroups));
 
         // convert the grouping into a game board
-
-        gameState.board = this.convertWordGroupToGameModel(gameGroups);
+        if (!gameGroups){
+            console.log("couldn't find words for game.");
+            return;
+        }
+        gameState.board = this.convertWordGroupToGameModel(gameGroups,paramsObj);
         gameState.board = _.shuffle(gameState.board);
         this.set('gameState', gameState);
 
     }
 
-    convertWordGroupToGameModel(gameGroups:any[]):Array<IMemoryCard> {
+    convertWordGroupToGameModel(gameGroups:any[], paramsObj : any):Array<IMemoryCard> {
         console.log("Convering to game model..", gameGroups);
         var typeCount = 1;
         var result : Array<IMemoryCard> = [];
         // iterate over each pair of the array
         for (let pair of gameGroups) {
-            let wordShowBy = 'img';
+            let wordShowBy = paramsObj.type1;
             for (let word of pair) {
                 // TODO implement a MemoryCard class
                 let card :IMemoryCard = {
@@ -210,10 +159,10 @@ export class MemoryGameService extends Store {
                     meta: {},
                     type: typeCount,
                     state: CardStateEnum.BACK,
-                    letter : word.str[0]
+                    letter : (paramsObj.position === PosEnum.FIRST) ? word.str[0] : word.str[word.str.length -1]
                 };
                 result.push(card);
-                wordShowBy = 'letter';
+                wordShowBy = paramsObj.type2;
             }
             typeCount++;
         } // end of pairs loop

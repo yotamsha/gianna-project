@@ -1,6 +1,12 @@
-<div ng-repeat="word in vm.words">
-    <div layout="row">
-        <img ng-src="/assets/{{word}}" />
-<input type="text">
+<script>
+
+</script>
+<div class="vocabulary-editor-container" layout="row"  ng-repeat="word in vm.words">
+    <div layout="row" flex="100" layout-align="start center">
+        <img class="editor-item-image" flex="15" ng-src="{{word.imagePath}}" />
+        <input class="editor-item-input" ng-model="word.symbols" flex="20" offset="10" type="text">
+        <md-button class="md-raised md-primary editor-item-button" flex="20" offset="10" ng-click="vm.saveWord(word)"> Save</md-button>
+
     </div>
+
 </div>

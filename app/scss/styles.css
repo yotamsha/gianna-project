@@ -42,6 +42,8 @@ body {
     color: #FFFFFF; }
   .header .game-option {
     font-size: 28px; }
+  .header .game-option-action {
+    margin: 14px; }
 
 /*.animate-switch-container {
   position:relative;
@@ -104,6 +106,13 @@ body {
       font-size: 72px; }
     .game-container .memory-card .card-back {
       height: 77px; }
+
+.vocabulary-editor-container {
+  width: 800px; }
+  .vocabulary-editor-container .editor-item-image {
+    background-size: contain; }
+  .vocabulary-editor-container .editor-item-input {
+    height: 30px; }
 
 .site-footer {
   height: 150px;

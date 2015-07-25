@@ -27,6 +27,7 @@ export declare class Error {
   public stack: string;
   constructor(message?: string);
 }
+
 export class Exception extends Error {
 
   constructor(public message: string) {
@@ -50,22 +51,74 @@ var SoundEnum  = {
   KAMATZ : String.fromCharCode(1464),
   PATAH : String.fromCharCode(1463),
   HIRIK : String.fromCharCode(1460),
-  KUBUZ : String.fromCharCode(64309),
+  KUBUZ : String.fromCharCode(1468),
   SHURUK : String.fromCharCode(1467),
   SEGOL : String.fromCharCode(1462),
   TZERE : String.fromCharCode(1461),
   SHVA : String.fromCharCode(1456),
+  HOLAM : String.fromCharCode(1465),
   NONE : null
 };
 
 var LetterEnum = {
   ALEF :  String.fromCharCode(1488),
-  BEIT :  String.fromCharCode(1489),
+  BEIT :  String.fromCharCode(64305),
+  VEIT :  String.fromCharCode(1489),
   GIMEL : String.fromCharCode(1490),
   DALET : String.fromCharCode(1491),
+  HE : String.fromCharCode(1492),
+  VAV : String.fromCharCode(1493),
+  ZAIN : String.fromCharCode(1494),
+  HET : String.fromCharCode(1495),
+  TET : String.fromCharCode(1496),
+  YUD : String.fromCharCode(1497),
+  KHAF : String.fromCharCode(1499),
+  KHAF_SOFIT : String.fromCharCode(1498),
+  KAF : String.fromCharCode(64315),
+  LAMED : String.fromCharCode(1500),
+  MEM : String.fromCharCode(1502),
+  MEM_SOFIT : String.fromCharCode(1501),
+  NUN : String.fromCharCode(1504),
+  NUN_SOFIT : String.fromCharCode(1503),
+  SAMEH : String.fromCharCode(1505),
+  AIN : String.fromCharCode(1506),
+  PE : String.fromCharCode(64324),
+  FE : String.fromCharCode(1508),
+  FE_SOFIT : String.fromCharCode(1507),
+  TZADIK : String.fromCharCode(1510),
+  TZADIK_SOFIT : String.fromCharCode(1509),
+  KOF : String.fromCharCode(1511),
+  RESH : String.fromCharCode(1512),
+  SHIN : String.fromCharCode(64298),
+  SIN : String.fromCharCode(64299),
+  SHIN_SOFIT : String.fromCharCode(1513),
+  TAF : String.fromCharCode(1514),
+  THAF : String.fromCharCode(64330),
+
 
 
 };
+
+var EMPHASIS = String.fromCharCode(1468);
+
+function getSound (char){
+  return _.findKey(SoundEnum, function(value) {
+    return value === char;
+  });
+}
+function getLetterName(char){
+  return _.findKey(LetterEnum, function(value) {
+    return value === char;
+  });
+}
+function isEmphasis (char){
+  return char === EMPHASIS;
+}
+function popRandomLetter(lettersCollection){
+  var key =  getLetterName(_.sample(lettersCollection));
+  delete lettersCollection[key];
+  return key;
+}
 
 interface ILetter {
   name : string;
@@ -85,7 +138,7 @@ interface IWord {
 }
 
 interface IVocabularyGenerator {
-  generateGameConstraints (game : string, params: Object) : any[];
+  generateGameConstraints (game : string, params: any) : any[];
   filter(vocabulary : Array<Word>, wConstraints : Array<IWordConstraint>, wordsCount : number) : Array<Word>;
   groupWords (vocabulary : Array<Word>, groupingConstraints  :GroupConstraint) : Array<any>;
 }
@@ -114,6 +167,9 @@ export class GroupConstraint implements IGroupConstraint {
   constructor (public wordsAmount : number,public constraint : IWordConstraint,
                public children : Array<{copies : number, group : IGroupConstraint}> = null) {
 
+  }
+  addGroup (group : any) {
+    this.children.push(group);
   }
 }
 
@@ -251,19 +307,27 @@ export class VocabularyGenerator implements IVocabularyGenerator {
   constructor () {
   }
 
-  generateGameConstraints (game : string, params: Object = null) {
+  generateGameConstraints (game : string, paramsObj: any = null) {
     // a memory game constraints descriptor contains:
     // pairsNum , availableLetters (optional) , availableSounds (optional), array of combined letter constraints(optional).
-    var paramsObj = {pairsNum : 4};
     // for each pair, generate a word constraint with a different opening letter. and with one
     // of the available sounds.
 
     // Words constraints:
-    var sound = new LetterConstraint(null,null,"PATAH");
+    var memoryGameCT:GroupConstraint = new GroupConstraint(null,null,[]);
 
-    var alefCT = new WordConstraint(1, [sound ,new LetterConstraint("ALEF")]);
-    var beitCT = new WordConstraint(1, [sound, new LetterConstraint("BEIT")]);
-    var gimelCT = new WordConstraint(1, [sound, new LetterConstraint("GIMEL")]);
+    var position = paramsObj.position;
+
+    var lettersBox = _.pick(_.clone(LetterEnum),paramsObj.lettersToSearch);
+    console.log("lettersBox", lettersBox);
+    for (var i = 0; i < paramsObj.pairsNum; i++){
+      let letter = popRandomLetter(lettersBox);
+      let letterCT = new WordConstraint(1, [new LetterConstraint(letter,position)]);
+      let groupCT:GroupConstraint = new GroupConstraint(2,letterCT);
+      memoryGameCT.addGroup({copies : 1,group : groupCT});
+
+    }
+
 
 
    // var f_patah_ct = new WordConstraint(1, [wildcard_patah_lc]);
@@ -275,17 +339,13 @@ export class VocabularyGenerator implements IVocabularyGenerator {
     var f_c_patah_ct = new WordConstraint(1, [gimelCT]);*/
 
 
-    var f_a_patah_2g:GroupConstraint = new GroupConstraint(2,alefCT);
-    var f__b_patah_2g:GroupConstraint = new GroupConstraint(2,beitCT);
-    var f_c_patah_2g:GroupConstraint = new GroupConstraint(2,gimelCT);
 
-    //var f_c_patah_3g:GroupConstraint = new GroupConstraint(3,f_c_patah_ct);
-    var nested_f_patah_2g:GroupConstraint = new GroupConstraint(null,null,
-        [{copies : 1,group : f_a_patah_2g},{copies : 1,group : f__b_patah_2g},{copies : 1,group : f_c_patah_2g}]);
 
-/*    var nested_f_patah_3g:GroupConstraint = new GroupConstraint(null,null,
-        [{copies : 1,group : f_a_patah_2g},{copies : 1,group : f__b_patah_2g},{copies : 1,group : f_c_patah_3g}]);*/
-    return nested_f_patah_2g;
+
+/*    var nested_f_patah_2g:GroupConstraint = new GroupConstraint(null,null,
+        [{copies : 1,group : f_a_patah_2g},{copies : 1,group : f__b_patah_2g},{copies : 1,group : f_c_patah_2g}]);*/
+
+    return memoryGameCT;
 
   }
   /**
@@ -382,26 +442,35 @@ export class VocabularyGenerator implements IVocabularyGenerator {
   }
 
   static createWordFromString (str : string, imgPath : string) {
-    function getSound (char){
-      return "KAMATZ";
-    }
-    function getLetterName(str){
-      return "ALEF";
-    }
+
     var letters : Array<Letter> = [];
 
     // iterate over the string array
     // for each character :
-    for (var i = 0, len = str.length; i < len; i=i+2) {
+    var i = 0;
+    while (i < str.length ) {
       let pos = (i === 0) ? PosEnum.FIRST : ((i === str.length -1) ? PosEnum.LAST : PosEnum.MIDDLE);
       let letterSymbol = str[i];
       let sound;
-      console.log("parsing letter: ",str[i]);
       if (true){ // if it's a letter:
         var nextChar = str[i+1] ;
         name = getLetterName(letterSymbol);
         if (nextChar){ // check the next character, if it's a sound add it to the letter Object. o/w set the sound to NONE.
-          sound = getSound(nextChar);
+          if (isEmphasis(nextChar)) {
+            i++;
+            nextChar = str[i+1]; // skip the emphasis, by checking the sound on the next letter and forwarding the index.
+          }
+          if (getLetterName(nextChar) === "VAV"){
+            // check if it's a holam vav or a kubutz vav - if so treat it as a sound and skip.
+            if (str[i+2] === EMPHASIS || getSound(str[i+2]) === "HOLAM"){
+              i++;
+              nextChar = str[i+1];
+              sound = getSound(nextChar);
+
+            }
+          } else {
+            sound = getSound(nextChar);
+          }
           var letter = new Letter(name,pos,sound);
 
         } else {
@@ -409,14 +478,14 @@ export class VocabularyGenerator implements IVocabularyGenerator {
         }
 
       }
+      i+=2;
       letters.push(letter); // add it to the letters array (both the letter and the sound symbols together)
-      console.log("generated letter : " + letter.toString());
     }
 
     // if it's a sound, we have an error in word structure.
 
     var word = new Word(str, letters , 1, imgPath);
-    console.log("generated word : " + word.toString());
+    // console.log("generated word : " + word.toString());
 
     return word;
   }

@@ -53,25 +53,6 @@ interface IToolbarControllerScope extends IScope<IToolbarController> {
  */
 interface IToolbarController extends IController<IToolbarControllerScope> {
 
-  /**
-   * Available languages.
-   */
-  languages: ILanguage[];
-
-  /**
-   * Current language.
-   */
-  language: string;
-
-  /**
-   * Available themes.
-   */
-  themes: ITheme[];
-
-  /**
-   * Current theme.
-   */
-  theme: string;
 
   /**
    * Application url.
@@ -83,30 +64,6 @@ interface IToolbarController extends IController<IToolbarControllerScope> {
    */
   version: string;
 
-  /**
-   * Available applications.
-   */
-  applications: IApplication[];
-
-  /**
-   * Current application.
-   */
-  application: string;
-
-  /**
-   * Sets the current application.
-   */
-  setApplication(application:string): void;
-
-  /**
-   * Sets the current language.
-   */
-  setLanguage(language:string): void;
-
-  /**
-   * Sets the current theme.
-   */
-  setTheme(theme:string): void;
 }
 
 /**
@@ -167,6 +124,7 @@ class ToolbarController extends BaseController<IToolbarControllerScope> implemen
   static $inject:string[] = ['$scope',
     '$translate',
     '$window',
+    '$location',
     'localStorageService'
   ];
 
@@ -183,12 +141,12 @@ class ToolbarController extends BaseController<IToolbarControllerScope> implemen
   version:string = ArtsVersion.VERSION;
 
   constructor(public $scope:IToolbarControllerScope, private $translate:ng.translate.ITranslateService,
-              private $window:Window,
+              private $window:Window, private $location: ng.ILocationProvider,
               private localStorageService:angular.local.storage.ILocalStorageService<string>) {
     super($scope);
 
     // language
-    this.languages = ToolbarController.LANGUAGES;
+/*    this.languages = ToolbarController.LANGUAGES;
     var lang = localStorageService.get('language');
 
     if (!lang) {
@@ -204,10 +162,10 @@ class ToolbarController extends BaseController<IToolbarControllerScope> implemen
           this.setLanguage(language);
         }
       });
-    });
+    });*/
 
     // theme
-    this.themes = ToolbarController.THEMES;
+/*    this.themes = ToolbarController.THEMES;
     this.theme = localStorageService.get('theme');
 
     if (!this.theme) {
@@ -220,9 +178,10 @@ class ToolbarController extends BaseController<IToolbarControllerScope> implemen
       if (old !== theme) {
         this.setTheme(theme);
       }
-    });
+    });*/
 
     // application
+/*
     this.applications = ToolbarController.APPLICATIONS;
     this.application = localStorageService.get('application');
 
@@ -236,12 +195,19 @@ class ToolbarController extends BaseController<IToolbarControllerScope> implemen
       this.setApplication(application);
     });
   }
+*/
 
-  setLanguage(language:string):void {
+/*  setLanguage(language:string):void {
     this.$translate.use(language).then(() => {
       this.language = language;
       this.localStorageService.set('language', this.language);
-    });
+    });*/
+  }
+
+  resetGame () : void {
+    console.log("refreshing game..");
+    //this.$location.path("/editor");
+    //this.game.init();
   }
 
   setTheme(theme:string):void {

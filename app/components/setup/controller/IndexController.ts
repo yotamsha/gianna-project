@@ -59,7 +59,7 @@ interface IController extends Arts.IController<IScope> {
 
 class IndexController extends Arts.BaseController<IScope> implements IController {
 
-    static $inject:string[] = ['$scope', '$mdSidenav', '$mdToast', '$mdBottomSheet','$q'];
+    static $inject:string[] = ['$scope', '$mdSidenav', '$mdToast', '$mdBottomSheet','$q','$http','$timeout'];
 
     selectedTabIndex:number = 0;
 
@@ -74,16 +74,20 @@ class IndexController extends Arts.BaseController<IScope> implements IController
 
     constructor(public $scope:IScope, private $mdSidenav:ng.material.MDSidenavService,
                 private $mdToast:ng.material.MDToastService,
-                private $mdBottomSheet:ng.material.MDBottomSheetService,private $q :any,public game: MemoryGameService, private srv : Arts.TestService) {
+                private $mdBottomSheet:ng.material.MDBottomSheetService,private $q :any, private $http, private $timeout,
+                public game: MemoryGameService, private srv : Arts.TestService) {
         super($scope);
-
+        var self = this;
         var component:Arts.IApplication = <Arts.IApplication>Arts.Arts.getModule(Component.NAME);
 
         this.baseURL = component.getBaseURL();
         //this.tiles = _tiles;
         console.log("tiles",this.tiles);
-        this.game = new MemoryGameService($q);
-        this.game.init();
+        this.game = new MemoryGameService($q,$http);
+        $timeout(function(){
+            self.game.init();
+        },1000);
+
         console.log("game : ",this.game);
        // console.log("test service : ",this.srv.func);
 
@@ -96,6 +100,10 @@ class IndexController extends Arts.BaseController<IScope> implements IController
         this.game.chooseCard(index).then(function(){
             console.log("flip cards back.");
         });
+    }
+    resetGame () : void {
+        console.log("refreshing game..");
+        //this.game.init();
     }
     bottomSheet():void {
         this.bottomSheetPromise = this.$mdBottomSheet.show({

@@ -1,0 +1,38 @@
+
+    <div>
+        <h1 class="title"><span translate="load.partial.arts.games.memory.title">Memory</span></h1>
+    </div>
+    <div>
+        <div layout="row" layout-align="end end" >
+            <!--<md-button>Action 1</md-button>
+            <md-button>Action 2</md-button>-->
+            <md-menu md-offset="5 70">
+                <!-- Trigger element is a md-button with an icon -->
+                <md-button class="md-fab md-mini md-primary game-option" ng-click="$mdOpenMenu($event)">
+                    <span class="round-button-option" translate="load.partial.arts.letters.alef">alef</span>
+                </md-button>
+                <md-menu-content width="1">
+                    <md-menu-item>
+                        <md-button ng-click="doSomething()">
+                            <span translate="load.partial.arts.letters.alef">alef</span>
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="doSomething()">
+                            <span translate="load.partial.arts.letters.beit">beit</span>
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="doSomething()">
+                            <span translate="load.partial.arts.letters.gimel">gimel</span>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <!-- Trigger element is a md-button with an icon -->
+            <md-button class="md-fab md-mini md-primary game-option game-option-action">
+                <span class="round-button-option" translate="load.partial.arts.letters.beit" ng-click="vm.resetGame()" >beit</span>
+            </md-button>
+
+        </div>
+    </div>

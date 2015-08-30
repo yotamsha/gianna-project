@@ -12,6 +12,7 @@ import {LetterConstraint} from '../pedagogicLogic/WordsGenerator';
 import {WordConstraint} from '../pedagogicLogic/WordsGenerator';
 import {GroupConstraint} from '../pedagogicLogic/WordsGenerator';
 import {PosEnum} from '../pedagogicLogic/WordsGenerator';
+import {SoundEnum} from '../pedagogicLogic/WordsGenerator';
 
 import IService = require('../../components/arts/interface/IService');
 import angular = require('angular');
@@ -44,6 +45,8 @@ var CardTypeEnum = {
 
 var GameStateEnum = {
     RUNNING: "RUNNING",
+    AFTER_SUCCESS: "AFTER_SUCCESS",
+    AFTER_FAILURE: "AFTER_FAILURE",
     ENDED: "ENDED"
 };
 
@@ -102,45 +105,68 @@ export class MemoryGameService extends Store {
     init() {
         var gameState = this.get('gameState');
         var gameConstraints:GroupConstraint;
-        var gameGroups:any[];
-        var generator = new VocabularyGenerator();
-        var paramsObj = {}; // get parameters from user selected properties.
+        //var generator = new VocabularyGenerator();
         // Set up a constraints object for memory game.
         console.log("generated constraints : ", gameConstraints);
         // Apply the constraints on the vocabulary to get a grouping for the words.
 
-        var systemWords =  _.shuffle(this.vocabularyEditorService.getWordsObjects());
         var paramsObj : {} = {
-            pairsNum : 6,
+            pairsNum : 4,
             position : PosEnum.FIRST,
-            lettersToSearch: ['ALEF','VEIT','GIMEL','NUN','DALET','HET'],
+            sounds : ["KAMATZ","PATAH"],
+            lettersToSearch: ['ALEF','VEIT','GIMEL','NUN','SHIN','PE'],
             type1 : 'img',
             type2 : 'img'
         };
-        console.log("systemWords",systemWords);
-        var i = 0;
-        while (i < 100 && !gameGroups){
-            console.log("iteration "+i + ", getting words..");
-            try {
-                gameConstraints = generator.generateGameConstraints("MEMORY", paramsObj);
-                gameGroups = generator.groupWords(systemWords, gameConstraints);
+        var gameGroups:any[] = this.generateGames(paramsObj)[0];
 
-            }catch(e){
-                i++;
-            }
-        }
-
-        //console.log("gameTree", VocabularyGenerator.printTree(gameGroups));
-
-        // convert the grouping into a game board
         if (!gameGroups){
             console.log("couldn't find words for game.");
             return;
         }
+        // convert the grouping into a game board
         gameState.board = this.convertWordGroupToGameModel(gameGroups,paramsObj);
         gameState.board = _.shuffle(gameState.board);
         this.set('gameState', gameState);
 
+    }
+    generateGames(paramsObj) {
+        var gameState = this.get('gameState');
+        var gameConstraints:GroupConstraint;
+        var gameGroups:any[];
+        var gameGroupsArr:any[] = [];
+        var generator = new VocabularyGenerator();
+        // Set up a constraints object for memory game.
+        console.log("generated constraints : ", gameConstraints);
+        // Apply the constraints on the vocabulary to get a grouping for the words.
+        var j = 0;
+        while (j < 50){
+            gameGroups = null;
+            var systemWords =  _.shuffle(this.vocabularyEditorService.getWordsObjects());
+            console.log("systemWords",systemWords);
+            // TODO - Idea is to pre-generate a set of available constraints groups for a game, offline.
+            // TODO - Then, use the user's set of instructions, and base the result on the pre-configured existing groups.
+            // For example: if Vav does not have a pair, it shouldn't be part of the lettersToSearch at all.
+            // We could propagate back the fact that a certain letter is not doable and then remove it from the task.
+            var i = 0;
+            while (i < 50 && !gameGroups){
+                console.log("iteration "+i + ", getting words..");
+                try {
+                    gameConstraints = generator.generateGameConstraints("MEMORY", paramsObj);
+                    gameGroups = generator.groupWords(systemWords, gameConstraints);
+
+                }catch(e){
+                    i++;
+                }
+            }
+            if (gameGroups){
+                gameGroupsArr.push(gameGroups);
+            }
+            j++;
+        }
+
+        console.log("gameGroupsArr: ",gameGroupsArr)
+        return gameGroupsArr;
     }
 
     convertWordGroupToGameModel(gameGroups:any[], paramsObj : any):Array<IMemoryCard> {
@@ -192,20 +218,31 @@ export class MemoryGameService extends Store {
                 gameState.pendingCardIndex = -1;
                 if (this.isDone(gameState.board)) {
                     gameState.phase = GameStateEnum.ENDED;
+                } else {
+                    gameState.phase = GameStateEnum.AFTER_SUCCESS;
+                    gameState.lockCards = true;
+                    setTimeout(function () {
+                        gameState.lockCards = false;
+                        gameState.phase = GameStateEnum.RUNNING;
+                        deferred.resolve();
+
+                    }, 2000);
                 }
                 this.set('gameState', gameState);
-                deferred.resolve();
             } else {
                 chosenCard.state = CardStateEnum.FLIPPED;
                 gameState.pendingCardIndex = -1;
                 gameState.lockCards = true;
+                gameState.phase = GameStateEnum.AFTER_FAILURE;
+
                 setTimeout(function () {
                     pendingCard.state = CardStateEnum.BACK;
                     chosenCard.state = CardStateEnum.BACK;
                     deferred.resolve();
                     gameState.lockCards = false;
+                    gameState.phase = GameStateEnum.RUNNING;
 
-                }, 3000)
+                }, 2000);
 
             }
         } else {

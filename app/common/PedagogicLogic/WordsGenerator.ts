@@ -47,7 +47,7 @@ export enum PosEnum  {
   LAST
 }
 
-var SoundEnum  = {
+export var SoundEnum  = {
   KAMATZ : String.fromCharCode(1464),
   PATAH : String.fromCharCode(1463),
   HIRIK : String.fromCharCode(1460),
@@ -119,6 +119,10 @@ function popRandomLetter(lettersCollection){
   delete lettersCollection[key];
   return key;
 }
+function popRandomSound(soundsCollection){
+  return _.sample(soundsCollection);
+
+}
 
 interface ILetter {
   name : string;
@@ -146,7 +150,7 @@ interface IVocabularyGenerator {
 interface ILetterConstraint {
   pos? : PosEnum;
   name? : string;
-  sound? : string;
+  sounds? : any;
 }
 
 interface IWordConstraint {
@@ -188,11 +192,12 @@ export class WordConstraint implements IWordConstraint {
 }
 
 export class LetterConstraint implements ILetterConstraint {
-  constructor (public name: string = null, public pos : PosEnum = null, public sound : string = null) {
+  constructor (public name: string = null, public pos : PosEnum = null, public sounds : any = null) {
     if (name === "?") {
       this.name = randomProperty(LetterEnum);
       console.log("randomly generated letter constraint - name: ",this.name);
     }
+
   }
 
   toString() {
@@ -215,10 +220,20 @@ export class Letter implements ILetter {
    * @returns {boolean}
    */
   has(constraint : ILetterConstraint) {
+    var hasSound = false;
     var pos = (typeof PosEnum[constraint.pos] !== 'undefined') ? (this.pos === constraint.pos) : true;
-    var sound = constraint.sound ? (this.sound === constraint.sound) : true;
+    if (_.isArray(constraint.sounds)){
+      for (let sound of constraint.sounds){
+        if (this.sound === sound){
+          hasSound = true;
+          break;
+        }
+      }
+    } else { // constraint sounds is a string
+      hasSound = constraint.sounds ? (this.sound === constraint.sounds) : true;
+    }
     var name = constraint.name ? (this.name === constraint.name) : true;
-    return (pos && sound && name);
+    return (pos && hasSound && name);
   }
 
   toString() {
@@ -242,7 +257,7 @@ export class Letter implements ILetter {
 
 export class Word implements IWord {
 
-  constructor (public str: string, public letters : Array<ILetter>, public level : number, public imgPath: string = null) {
+  constructor (public str: string, public letters : Array<ILetter>, public level : number, public imgPath: string = null, metaRules : any = null) {
 
   }
 
@@ -322,7 +337,8 @@ export class VocabularyGenerator implements IVocabularyGenerator {
     console.log("lettersBox", lettersBox);
     for (var i = 0; i < paramsObj.pairsNum; i++){
       let letter = popRandomLetter(lettersBox);
-      let letterCT = new WordConstraint(1, [new LetterConstraint(letter,position)]);
+      let sound = popRandomSound(paramsObj.sounds);
+      let letterCT = new WordConstraint(1, [new LetterConstraint(letter,position,sound)]);
       let groupCT:GroupConstraint = new GroupConstraint(2,letterCT);
       memoryGameCT.addGroup({copies : 1,group : groupCT});
 

@@ -30,7 +30,8 @@ requirejs.config(
         'jquery': 'vendor/js/jquery',
         'lodash': 'vendor/js/lodash',
         'moment': 'vendor/js/moment',
-        'text': 'vendor/js/text'
+        'text': 'vendor/js/text',
+        'firebase': 'vendor/js/firebase'
       },
 
       shim: {

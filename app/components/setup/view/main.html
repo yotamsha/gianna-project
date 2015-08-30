@@ -1,7 +1,12 @@
  <div layout="column"  layout-align="center center">
      <section layout="row" class="game-container"  layout-align="center center">
          <div style="min-width: 800px">
-
+                <div class="msg-container" ng-switch="vm.game.state.gameState.phase">
+                    <span ng-switch-when="RUNNING" translate="load.partial.arts.messages.pick_first"></span>
+                    <span ng-switch-when="AFTER_SUCCESS" translate="load.partial.arts.messages.success"></span>
+                    <span ng-switch-when="AFTER_FAILURE" translate="load.partial.arts.messages.try_again"></span>
+                    <span ng-switch-when="ENDED" translate="load.partial.arts.messages.game_over"></span>
+                </div>
                 <md-grid-list class="gridListdemoBasicUsage" md-cols="4" md-row-height="200px" md-col-width="150px"
                               md-gutter="12px" md-gutter-gt-sm="8px">
 

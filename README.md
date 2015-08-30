@@ -57,6 +57,15 @@ Run tests:
 npm test
 ```
 
+### TODOS
+```
+* Deploy the app
+* stabilize the loading to find a game from offline generated possibilities.
+* Add Refresh button
+* Add link to the vocabulary.
+* Add menus to select a letter and a nikud.
+* design the cards and the message box. (yoav)
+
 
 
 [downloads-image]: http://img.shields.io/npm/dm/angular-require-typescript-seed.svg

@@ -87,6 +87,9 @@ class IndexController extends Arts.BaseController<IScope> implements IController
         $timeout(function(){
             self.game.init();
         },1000);
+        this.$scope.$on("REFRESH_GAME",function(){
+            self.game.init();
+        });
 
         console.log("game : ",this.game);
        // console.log("test service : ",this.srv.func);
@@ -103,7 +106,7 @@ class IndexController extends Arts.BaseController<IScope> implements IController
     }
     resetGame () : void {
         console.log("refreshing game..");
-        //this.game.init();
+        this.game.init();
     }
     bottomSheet():void {
         this.bottomSheetPromise = this.$mdBottomSheet.show({

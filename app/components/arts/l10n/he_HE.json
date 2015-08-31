@@ -24,6 +24,9 @@
           "error": "Fehler",
           "tools": "Werkzeuge"
         },
+        "toolbar" : {
+          "play_again" : "שחק שוב"
+        },
         "games" : {
           "memory" : {
             "title1" : "&#1488;&#1464;&#1488;&#1464;&#1488;&#1464;&#1488;&#1464;",

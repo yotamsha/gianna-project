@@ -1,13 +1,16 @@
-
-    <div>
+<div layout="row">
+    <div flex="66">
         <h1 class="title"><span translate="load.partial.arts.games.memory.title">Memory</span></h1>
     </div>
-    <div>
-        <div layout="row" layout-align="end end" >
+    <div  flex="33" layout="row" layout-align="center end">
+        <div>
+            <md-button class="md-raised md-primary" ng-click="vm.resetGame()">
+                <span translate="load.partial.arts.toolbar.play_again">play_again</span>
+            </md-button>
             <!--<md-button>Action 1</md-button>
             <md-button>Action 2</md-button>-->
-            <md-menu md-offset="5 70">
-                <!-- Trigger element is a md-button with an icon -->
+            <!--<md-menu md-offset="5 70">
+                &lt;!&ndash; Trigger element is a md-button with an icon &ndash;&gt;
                 <md-button class="md-fab md-mini md-primary game-option" ng-click="$mdOpenMenu($event)">
                     <span class="round-button-option" translate="load.partial.arts.letters.alef">alef</span>
                 </md-button>
@@ -28,11 +31,20 @@
                         </md-button>
                     </md-menu-item>
                 </md-menu-content>
-            </md-menu>
+            </md-menu>-->
             <!-- Trigger element is a md-button with an icon -->
-            <md-button class="md-fab md-mini md-primary game-option game-option-action">
-                <span class="round-button-option" translate="load.partial.arts.letters.beit" ng-click="vm.resetGame()" >beit</span>
-            </md-button>
+<!--            <md-button class="md-fab md-mini md-primary game-option game-option-action">
+                <span class="round-button-option" ng-click="vm.resetGame()">
+                    &lt;!&ndash;<md-icon md-svg-icon="social:android" aria-label="android "></md-icon>&ndash;&gt;
+&lt;!&ndash;
+                    <img src="/assets/refresh_button.png" />
+&ndash;&gt;
+                </span>
+            </md-button>-->
 
         </div>
     </div>
+    <div>
+
+    </div>
+</div>

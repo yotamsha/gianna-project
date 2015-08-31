@@ -103,11 +103,8 @@ export class MemoryGameService extends Store {
     }
 
     init() {
-        var gameState = this.get('gameState');
-        var gameConstraints:GroupConstraint;
-        //var generator = new VocabularyGenerator();
-        // Set up a constraints object for memory game.
-        console.log("generated constraints : ", gameConstraints);
+        //var gameState = this.get('gameState');
+        console.log("init game..");
         // Apply the constraints on the vocabulary to get a grouping for the words.
 
         var paramsObj : {} = {
@@ -118,19 +115,26 @@ export class MemoryGameService extends Store {
             type1 : 'img',
             type2 : 'img'
         };
-        var gameGroups:any[] = this.generateGames(paramsObj)[0];
+        var gameGroups:any[] = this.generateGame("KAMATZ");
 
         if (!gameGroups){
             console.log("couldn't find words for game.");
             return;
         }
+        gameState = {
+
+            pendingCardIndex: -1,
+                phase: GameStateEnum.RUNNING,
+                lockCards: false
+        };
         // convert the grouping into a game board
         gameState.board = this.convertWordGroupToGameModel(gameGroups,paramsObj);
         gameState.board = _.shuffle(gameState.board);
         this.set('gameState', gameState);
 
     }
-    generateGames(paramsObj) {
+
+    generateGame(sound) {
         var gameState = this.get('gameState');
         var gameConstraints:GroupConstraint;
         var gameGroups:any[];
@@ -138,8 +142,6518 @@ export class MemoryGameService extends Store {
         var generator = new VocabularyGenerator();
         // Set up a constraints object for memory game.
         console.log("generated constraints : ", gameConstraints);
+        var games = {
+            "KAMATZ": [
+                [
+                    [
+                        {
+                            "str": "נַעֲלַיִם",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "AIN",
+                                    "pos": 1,
+                                    "symbol": "ע"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "MEM_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ם"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/shoes.png"
+                        },
+                        {
+                            "str": "נַדְנֵדָה",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "דְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "נֵ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "דָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/nadneda.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        },
+                        {
+                            "str": "גַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/wave.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְמוֹן",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "מֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/palace.png"
+                        },
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בַּלוֹן",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "לֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/baloon.png"
+                        },
+                        {
+                            "str": "בַּמָּה",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/stage.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "נָחָשׁ",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "חָ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/snake.png"
+                        },
+                        {
+                            "str": "נָהַג",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "הַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/driver.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        },
+                        {
+                            "str": "אַרְמוֹן",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "מֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/palace.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּלְגַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "לְ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/whell.png"
+                        },
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בָּיִת",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "TAF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ת"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/house.png"
+                        },
+                        {
+                            "str": "בָּלַשׁ",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/detective.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "בָּלַשׁ",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/detective.png"
+                        },
+                        {
+                            "str": "בָּיִת",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "TAF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ת"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/house.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "נָחָשׁ",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "חָ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/snake.png"
+                        },
+                        {
+                            "str": "נָהַג",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "הַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/driver.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּלְגַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "לְ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/whell.png"
+                        },
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְמוֹן",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "מֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/palace.png"
+                        },
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "נָחָשׁ",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "חָ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/snake.png"
+                        },
+                        {
+                            "str": "נָהַג",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "הַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/driver.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        },
+                        {
+                            "str": "אַרְמוֹן",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "מֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/palace.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּלְגַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "לְ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/whell.png"
+                        },
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בָּלַשׁ",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/detective.png"
+                        },
+                        {
+                            "str": "בָּיִת",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "TAF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ת"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/house.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "גַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/wave.png"
+                        },
+                        {
+                            "str": "גַּלְגַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "לְ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/whell.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        },
+                        {
+                            "str": "אַרְמוֹן",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "מֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/palace.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בָּיִת",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "TAF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ת"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/house.png"
+                        },
+                        {
+                            "str": "בָּלַשׁ",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/detective.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "נָהַג",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "הַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/driver.png"
+                        },
+                        {
+                            "str": "נָחָשׁ",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "חָ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/snake.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "בַּמָּה",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/stage.png"
+                        },
+                        {
+                            "str": "בַּלוֹן",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "לֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/baloon.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        },
+                        {
+                            "str": "גַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/wave.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "נַדְנֵדָה",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "דְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "נֵ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "דָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/nadneda.png"
+                        },
+                        {
+                            "str": "נַעֲלַיִם",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "AIN",
+                                    "pos": 1,
+                                    "symbol": "ע"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "MEM_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ם"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/shoes.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        },
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "בַּמָּה",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/stage.png"
+                        },
+                        {
+                            "str": "בַּקְבּוּק",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "KOF",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "קְ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 1,
+                                    "sound": "KUBUZ",
+                                    "symbol": "בּ"
+                                },
+                                {
+                                    "name": "KOF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ק"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/bottle.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְמוֹן",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "מֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/palace.png"
+                        },
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/wave.png"
+                        },
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "נַעֲלַיִם",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "AIN",
+                                    "pos": 1,
+                                    "symbol": "ע"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "MEM_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ם"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/shoes.png"
+                        },
+                        {
+                            "str": "נַדְנֵדָה",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "דְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "נֵ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "דָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/nadneda.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "בָּיִת",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "TAF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ת"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/house.png"
+                        },
+                        {
+                            "str": "בָּלַשׁ",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/detective.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּג",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/roof.png"
+                        },
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "נַדְנֵדָה",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "דְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "נֵ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "דָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/nadneda.png"
+                        },
+                        {
+                            "str": "נַעֲלַיִם",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "AIN",
+                                    "pos": 1,
+                                    "symbol": "ע"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "MEM_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ם"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/shoes.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        },
+                        {
+                            "str": "אַרְמוֹן",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "מֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/palace.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "גַּג",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/roof.png"
+                        },
+                        {
+                            "str": "גַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/wave.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בַּמָּה",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/stage.png"
+                        },
+                        {
+                            "str": "בַּלוֹן",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "לֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/baloon.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "נַדְנֵדָה",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "דְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "נֵ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "דָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/nadneda.png"
+                        },
+                        {
+                            "str": "נַעֲלַיִם",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "AIN",
+                                    "pos": 1,
+                                    "symbol": "ע"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "MEM_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ם"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/shoes.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        },
+                        {
+                            "str": "אַרְמוֹן",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "מֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/palace.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "נַעֲלַיִם",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "AIN",
+                                    "pos": 1,
+                                    "symbol": "ע"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "MEM_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ם"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/shoes.png"
+                        },
+                        {
+                            "str": "נַדְנֵדָה",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "דְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "נֵ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "דָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/nadneda.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּלְגַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "לְ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/whell.png"
+                        },
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        },
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בַּלוֹן",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "לֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/baloon.png"
+                        },
+                        {
+                            "str": "בַּקְבּוּק",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "KOF",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "קְ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 1,
+                                    "sound": "KUBUZ",
+                                    "symbol": "בּ"
+                                },
+                                {
+                                    "name": "KOF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ק"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/bottle.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "גַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/wave.png"
+                        },
+                        {
+                            "str": "גַּג",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/roof.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        },
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "נָהַג",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "הַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/driver.png"
+                        },
+                        {
+                            "str": "נָחָשׁ",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "חָ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/snake.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בַּלוֹן",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "לֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/baloon.png"
+                        },
+                        {
+                            "str": "בַּמָּה",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/stage.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "נָחָשׁ",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "חָ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/snake.png"
+                        },
+                        {
+                            "str": "נָהַג",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "הַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/driver.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בַּמָּה",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/stage.png"
+                        },
+                        {
+                            "str": "בַּלוֹן",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "לֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/baloon.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        },
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּלְגַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "לְ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/whell.png"
+                        },
+                        {
+                            "str": "גַּג",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/roof.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        },
+                        {
+                            "str": "אַרְמוֹן",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "מֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/palace.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בָּלַשׁ",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/detective.png"
+                        },
+                        {
+                            "str": "בָּיִת",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "TAF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ת"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/house.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּלְגַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "לְ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/whell.png"
+                        },
+                        {
+                            "str": "גַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/wave.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "נַעֲלַיִם",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "AIN",
+                                    "pos": 1,
+                                    "symbol": "ע"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "MEM_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ם"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/shoes.png"
+                        },
+                        {
+                            "str": "נַדְנֵדָה",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "דְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "נֵ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "דָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/nadneda.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "נַעֲלַיִם",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "AIN",
+                                    "pos": 1,
+                                    "symbol": "ע"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "MEM_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ם"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/shoes.png"
+                        },
+                        {
+                            "str": "נַדְנֵדָה",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "דְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "נֵ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "דָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/nadneda.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        },
+                        {
+                            "str": "גַּלְגַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "לְ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/whell.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בָּיִת",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "TAF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ת"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/house.png"
+                        },
+                        {
+                            "str": "בָּלַשׁ",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/detective.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְמוֹן",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "מֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/palace.png"
+                        },
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "גַּג",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/roof.png"
+                        },
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        },
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בַּלוֹן",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "לֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/baloon.png"
+                        },
+                        {
+                            "str": "בַּקְבּוּק",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "KOF",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "קְ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 1,
+                                    "sound": "KUBUZ",
+                                    "symbol": "בּ"
+                                },
+                                {
+                                    "name": "KOF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ק"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/bottle.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "נַדְנֵדָה",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "דְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "נֵ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "דָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/nadneda.png"
+                        },
+                        {
+                            "str": "נַעֲלַיִם",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "AIN",
+                                    "pos": 1,
+                                    "symbol": "ע"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "MEM_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ם"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/shoes.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "נַדְנֵדָה",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "דְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "נֵ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "דָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/nadneda.png"
+                        },
+                        {
+                            "str": "נַעֲלַיִם",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "AIN",
+                                    "pos": 1,
+                                    "symbol": "ע"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "MEM_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ם"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/shoes.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/wave.png"
+                        },
+                        {
+                            "str": "גַּג",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/roof.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        },
+                        {
+                            "str": "אַרְמוֹן",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "מֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/palace.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בַּלוֹן",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "לֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/baloon.png"
+                        },
+                        {
+                            "str": "בַּמָּה",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/stage.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "בָּיִת",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "TAF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ת"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/house.png"
+                        },
+                        {
+                            "str": "בָּלַשׁ",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/detective.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "נַדְנֵדָה",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "דְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "נֵ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "דָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/nadneda.png"
+                        },
+                        {
+                            "str": "נַעֲלַיִם",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "AIN",
+                                    "pos": 1,
+                                    "symbol": "ע"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "MEM_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ם"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/shoes.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּלְגַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "לְ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/whell.png"
+                        },
+                        {
+                            "str": "גַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/wave.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        },
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "בָּלַשׁ",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/detective.png"
+                        },
+                        {
+                            "str": "בָּיִת",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "TAF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ת"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/house.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        },
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "נָחָשׁ",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "חָ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/snake.png"
+                        },
+                        {
+                            "str": "נָהַג",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "הַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/driver.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּג",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/roof.png"
+                        },
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        },
+                        {
+                            "str": "אַרְמוֹן",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "מֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/palace.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        },
+                        {
+                            "str": "גַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/wave.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "נָהַג",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "הַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/driver.png"
+                        },
+                        {
+                            "str": "נָחָשׁ",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "חָ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/snake.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בָּיִת",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "TAF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ת"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/house.png"
+                        },
+                        {
+                            "str": "בָּלַשׁ",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/detective.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        },
+                        {
+                            "str": "גַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/wave.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בַּלוֹן",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "לֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/baloon.png"
+                        },
+                        {
+                            "str": "בַּמָּה",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/stage.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְמוֹן",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "מֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/palace.png"
+                        },
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "נָחָשׁ",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "חָ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/snake.png"
+                        },
+                        {
+                            "str": "נָהַג",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "הַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/driver.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        },
+                        {
+                            "str": "אַרְמוֹן",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "מֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/palace.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "נַדְנֵדָה",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "דְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "נֵ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "דָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/nadneda.png"
+                        },
+                        {
+                            "str": "נַעֲלַיִם",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "AIN",
+                                    "pos": 1,
+                                    "symbol": "ע"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "MEM_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ם"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/shoes.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בַּלוֹן",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "לֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/baloon.png"
+                        },
+                        {
+                            "str": "בַּקְבּוּק",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "KOF",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "קְ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 1,
+                                    "sound": "KUBUZ",
+                                    "symbol": "בּ"
+                                },
+                                {
+                                    "name": "KOF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ק"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/bottle.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/wave.png"
+                        },
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "אַרְמוֹן",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "מֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/palace.png"
+                        },
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        },
+                        {
+                            "str": "גַּלְגַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "לְ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/whell.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בַּמָּה",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/stage.png"
+                        },
+                        {
+                            "str": "בַּקְבּוּק",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "KOF",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "קְ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 1,
+                                    "sound": "KUBUZ",
+                                    "symbol": "בּ"
+                                },
+                                {
+                                    "name": "KOF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ק"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/bottle.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "נַדְנֵדָה",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "דְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "נֵ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "דָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/nadneda.png"
+                        },
+                        {
+                            "str": "נַעֲלַיִם",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "AIN",
+                                    "pos": 1,
+                                    "symbol": "ע"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "MEM_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ם"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/shoes.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "בַּלוֹן",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "לֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/baloon.png"
+                        },
+                        {
+                            "str": "בַּקְבּוּק",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "KOF",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "קְ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 1,
+                                    "sound": "KUBUZ",
+                                    "symbol": "בּ"
+                                },
+                                {
+                                    "name": "KOF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ק"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/bottle.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        },
+                        {
+                            "str": "גַּג",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/roof.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "נָחָשׁ",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "חָ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/snake.png"
+                        },
+                        {
+                            "str": "נָהַג",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "הַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/driver.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        },
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "נָהַג",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "הַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/driver.png"
+                        },
+                        {
+                            "str": "נָחָשׁ",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "חָ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/snake.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בָּלַשׁ",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/detective.png"
+                        },
+                        {
+                            "str": "בָּיִת",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "TAF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ת"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/house.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּג",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/roof.png"
+                        },
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        },
+                        {
+                            "str": "אַרְמוֹן",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "מֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/palace.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "נָהַג",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "הַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/driver.png"
+                        },
+                        {
+                            "str": "נָחָשׁ",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "חָ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/snake.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בָּיִת",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "TAF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ת"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/house.png"
+                        },
+                        {
+                            "str": "בָּלַשׁ",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/detective.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּלְגַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "לְ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/whell.png"
+                        },
+                        {
+                            "str": "גַּג",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/roof.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        },
+                        {
+                            "str": "אַרְמוֹן",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "מֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/palace.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "נָחָשׁ",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "חָ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/snake.png"
+                        },
+                        {
+                            "str": "נָהַג",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "הַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/driver.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        },
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        },
+                        {
+                            "str": "גַּג",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ג"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/roof.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בָּלַשׁ",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "SHIN_SOFIT",
+                                    "pos": 1,
+                                    "symbol": "ש"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/detective.png"
+                        },
+                        {
+                            "str": "בָּיִת",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "KAMATZ",
+                                    "symbol": "בָ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "TAF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ת"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/house.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "נַדְנֵדָה",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "דְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "נֵ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "דָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/nadneda.png"
+                        },
+                        {
+                            "str": "נַעֲלַיִם",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "AIN",
+                                    "pos": 1,
+                                    "symbol": "ע"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "MEM_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ם"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/shoes.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְמוֹן",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "מֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/palace.png"
+                        },
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "בַּקְבּוּק",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "KOF",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "קְ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 1,
+                                    "sound": "KUBUZ",
+                                    "symbol": "בּ"
+                                },
+                                {
+                                    "name": "KOF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ק"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/bottle.png"
+                        },
+                        {
+                            "str": "בַּמָּה",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/stage.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּלְגַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "לְ"
+                                },
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/whell.png"
+                        },
+                        {
+                            "str": "גַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/wave.png"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        {
+                            "str": "בַּלוֹן",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "HOLAM",
+                                    "symbol": "לֹ"
+                                },
+                                {
+                                    "name": "NUN_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ן"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/baloon.png"
+                        },
+                        {
+                            "str": "בַּקְבּוּק",
+                            "letters": [
+                                {
+                                    "name": "VEIT",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "בַ"
+                                },
+                                {
+                                    "name": "KOF",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "קְ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 1,
+                                    "sound": "KUBUZ",
+                                    "symbol": "בּ"
+                                },
+                                {
+                                    "name": "KOF",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ק"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/bottle.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "גַּמָּד",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "MEM",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "מָ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ד"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/dwarf.png"
+                        },
+                        {
+                            "str": "גַּל",
+                            "letters": [
+                                {
+                                    "name": "GIMEL",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "גַ"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ל"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/wave.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "נַדְנֵדָה",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "דְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "נֵ"
+                                },
+                                {
+                                    "name": "DALET",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "דָ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/nadneda.png"
+                        },
+                        {
+                            "str": "נַעֲלַיִם",
+                            "letters": [
+                                {
+                                    "name": "NUN",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "נַ"
+                                },
+                                {
+                                    "name": "AIN",
+                                    "pos": 1,
+                                    "symbol": "ע"
+                                },
+                                {
+                                    "name": "LAMED",
+                                    "pos": 1,
+                                    "sound": "PATAH",
+                                    "symbol": "לַ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "HIRIK",
+                                    "symbol": "יִ"
+                                },
+                                {
+                                    "name": "MEM_SOFIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ם"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/shoes.png"
+                        }
+                    ],
+                    [
+                        {
+                            "str": "אַרְנָב",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "NUN",
+                                    "pos": 1,
+                                    "sound": "KAMATZ",
+                                    "symbol": "נָ"
+                                },
+                                {
+                                    "name": "VEIT",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ב"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/rabbit.png"
+                        },
+                        {
+                            "str": "אַרְיֵה",
+                            "letters": [
+                                {
+                                    "name": "ALEF",
+                                    "pos": 0,
+                                    "sound": "PATAH",
+                                    "symbol": "אַ"
+                                },
+                                {
+                                    "name": "RESH",
+                                    "pos": 1,
+                                    "sound": "SHVA",
+                                    "symbol": "רְ"
+                                },
+                                {
+                                    "name": "YUD",
+                                    "pos": 1,
+                                    "sound": "TZERE",
+                                    "symbol": "יֵ"
+                                },
+                                {
+                                    "name": "HE",
+                                    "pos": 2,
+                                    "sound": null,
+                                    "symbol": "ה"
+                                }
+                            ],
+                            "level": 1,
+                            "imgPath": "/assets/lion-small.png"
+                        }
+                    ]
+                ]
+            ]
+        };
+        return games[sound][Math.floor(Math.random() * games[sound].length) ]
         // Apply the constraints on the vocabulary to get a grouping for the words.
-        var j = 0;
+/*        var j = 0;
         while (j < 50){
             gameGroups = null;
             var systemWords =  _.shuffle(this.vocabularyEditorService.getWordsObjects());
@@ -166,7 +6680,7 @@ export class MemoryGameService extends Store {
         }
 
         console.log("gameGroupsArr: ",gameGroupsArr)
-        return gameGroupsArr;
+        return gameGroupsArr;*/
     }
 
     convertWordGroupToGameModel(gameGroups:any[], paramsObj : any):Array<IMemoryCard> {

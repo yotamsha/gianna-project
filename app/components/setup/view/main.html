@@ -1,5 +1,5 @@
  <div layout="column"  layout-align="center center">
-     <section layout="row" class="game-container"  layout-align="center center">
+     <section layout="row" class="game-container"  layout-align="center center" ng-show="vm.game.state.gameState.board.length > 0">
          <div style="min-width: 800px">
                 <div class="msg-container" ng-switch="vm.game.state.gameState.phase">
                     <span ng-switch-when="RUNNING" translate="load.partial.arts.messages.pick_first"></span>
@@ -14,22 +14,10 @@
                                   md-rowspan="1" md-colspan="1">
                         <md-card>
                             <md-card-content layout="row" layout-align="center center" ng-disabled="vm.game.state.gameState.lockCards" ng-click="vm.cardClicked($index)" class="memory-card">
-                                <!--                           <div class="animate-switch-container" ng-switch on="card.state">
-                                &lt;!&ndash;
-                                                               ng-show="card.state === 'BACK'"
-                                &ndash;&gt;
-                                                               <img ng-switch-default class="card-back animate-switch" src="assets/card-back-icon.png"/>
-                                                               <img ng-switch-when="PENDING" class="animate-switch" ng-src="{{card.imgSrc}}" />
-                                &lt;!&ndash;
-                                                               <span ng-show="card.state !== 'BACK' && card.letter" ng-bind-html="card.letter" ng-animate="{show: 'animate-enter', hide: 'animate-leave'}" ></span>
-                                &ndash;&gt;
-
-
-                                                           </div>-->
                                 <img class="card-back" ng-show="card.state === 'BACK'" src="assets/card-back-icon.png" ng-animate="{show: 'animate-enter', hide: 'animate-leave'}"/>
                                 <img ng-show="card.state !== 'BACK' && card.showBy === 'img'" ng-src="{{card.imgSrc}}" ng-animate="{show: 'animate-enter', hide: 'animate-leave'}"/>
                                 <span ng-show="card.state !== 'BACK' && card.showBy === 'letter'" ng-bind-html="card.letter" ng-animate="{show: 'animate-enter', hide: 'animate-leave'}" ></span>
-                                {{card.type}}
+                                <!--{{card.type}}-->
                             </md-card-content>
 
                         </md-card>

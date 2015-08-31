@@ -1,0 +1,6509 @@
+{
+  "kamatz": [
+    [
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "AIN",
+              "pos": 1,
+              "symbol": "?"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/shoes.png"
+        },
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/nadneda.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        },
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/wave.png"
+        }
+      ],
+      [
+        {
+          "str": "????????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/palace.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/baloon.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/stage.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/snake.png"
+        },
+        {
+          "str": "?????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/driver.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        },
+        {
+          "str": "????????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/palace.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/whell.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        }
+      ],
+      [
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "TAF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/house.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/detective.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/detective.png"
+        },
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "TAF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/house.png"
+        }
+      ],
+      [
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/snake.png"
+        },
+        {
+          "str": "?????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/driver.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/whell.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        }
+      ],
+      [
+        {
+          "str": "????????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/palace.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/snake.png"
+        },
+        {
+          "str": "?????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/driver.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        },
+        {
+          "str": "????????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/palace.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/whell.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/detective.png"
+        },
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "TAF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/house.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/wave.png"
+        },
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/whell.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        },
+        {
+          "str": "????????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/palace.png"
+        }
+      ],
+      [
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "TAF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/house.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/detective.png"
+        }
+      ],
+      [
+        {
+          "str": "?????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/driver.png"
+        },
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/snake.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/stage.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/baloon.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        },
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/wave.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/nadneda.png"
+        },
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "AIN",
+              "pos": 1,
+              "symbol": "?"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/shoes.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/stage.png"
+        },
+        {
+          "str": "??????????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "KOF",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 1,
+              "sound": "KUBUZ",
+              "symbol": "??"
+            },
+            {
+              "name": "KOF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/bottle.png"
+        }
+      ],
+      [
+        {
+          "str": "????????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/palace.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        }
+      ],
+      [
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/wave.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "AIN",
+              "pos": 1,
+              "symbol": "?"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/shoes.png"
+        },
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/nadneda.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "TAF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/house.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/detective.png"
+        }
+      ],
+      [
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/roof.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/nadneda.png"
+        },
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "AIN",
+              "pos": 1,
+              "symbol": "?"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/shoes.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        },
+        {
+          "str": "????????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/palace.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/roof.png"
+        },
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/wave.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/stage.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/baloon.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/nadneda.png"
+        },
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "AIN",
+              "pos": 1,
+              "symbol": "?"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/shoes.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        },
+        {
+          "str": "????????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/palace.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "AIN",
+              "pos": 1,
+              "symbol": "?"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/shoes.png"
+        },
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/nadneda.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/whell.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/baloon.png"
+        },
+        {
+          "str": "??????????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "KOF",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 1,
+              "sound": "KUBUZ",
+              "symbol": "??"
+            },
+            {
+              "name": "KOF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/bottle.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/wave.png"
+        },
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/roof.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        }
+      ],
+      [
+        {
+          "str": "?????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/driver.png"
+        },
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/snake.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/baloon.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/stage.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/snake.png"
+        },
+        {
+          "str": "?????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/driver.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/stage.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/baloon.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/whell.png"
+        },
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/roof.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        },
+        {
+          "str": "????????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/palace.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/detective.png"
+        },
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "TAF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/house.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/whell.png"
+        },
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/wave.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "AIN",
+              "pos": 1,
+              "symbol": "?"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/shoes.png"
+        },
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/nadneda.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "AIN",
+              "pos": 1,
+              "symbol": "?"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/shoes.png"
+        },
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/nadneda.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        },
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/whell.png"
+        }
+      ],
+      [
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "TAF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/house.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/detective.png"
+        }
+      ],
+      [
+        {
+          "str": "????????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/palace.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/roof.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/baloon.png"
+        },
+        {
+          "str": "??????????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "KOF",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 1,
+              "sound": "KUBUZ",
+              "symbol": "??"
+            },
+            {
+              "name": "KOF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/bottle.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/nadneda.png"
+        },
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "AIN",
+              "pos": 1,
+              "symbol": "?"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/shoes.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/nadneda.png"
+        },
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "AIN",
+              "pos": 1,
+              "symbol": "?"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/shoes.png"
+        }
+      ],
+      [
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/wave.png"
+        },
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/roof.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        },
+        {
+          "str": "????????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/palace.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/baloon.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/stage.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "TAF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/house.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/detective.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/nadneda.png"
+        },
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "AIN",
+              "pos": 1,
+              "symbol": "?"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/shoes.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/whell.png"
+        },
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/wave.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/detective.png"
+        },
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "TAF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/house.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        }
+      ],
+      [
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/snake.png"
+        },
+        {
+          "str": "?????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/driver.png"
+        }
+      ],
+      [
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/roof.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        },
+        {
+          "str": "????????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/palace.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        },
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/wave.png"
+        }
+      ],
+      [
+        {
+          "str": "?????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/driver.png"
+        },
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/snake.png"
+        }
+      ],
+      [
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "TAF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/house.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/detective.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        },
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/wave.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/baloon.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/stage.png"
+        }
+      ],
+      [
+        {
+          "str": "????????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/palace.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        }
+      ],
+      [
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/snake.png"
+        },
+        {
+          "str": "?????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/driver.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        },
+        {
+          "str": "????????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/palace.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/nadneda.png"
+        },
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "AIN",
+              "pos": 1,
+              "symbol": "?"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/shoes.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/baloon.png"
+        },
+        {
+          "str": "??????????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "KOF",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 1,
+              "sound": "KUBUZ",
+              "symbol": "??"
+            },
+            {
+              "name": "KOF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/bottle.png"
+        }
+      ],
+      [
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/wave.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "????????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/palace.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        },
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/whell.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/stage.png"
+        },
+        {
+          "str": "??????????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "KOF",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 1,
+              "sound": "KUBUZ",
+              "symbol": "??"
+            },
+            {
+              "name": "KOF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/bottle.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/nadneda.png"
+        },
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "AIN",
+              "pos": 1,
+              "symbol": "?"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/shoes.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/baloon.png"
+        },
+        {
+          "str": "??????????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "KOF",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 1,
+              "sound": "KUBUZ",
+              "symbol": "??"
+            },
+            {
+              "name": "KOF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/bottle.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        },
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/roof.png"
+        }
+      ],
+      [
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/snake.png"
+        },
+        {
+          "str": "?????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/driver.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "?????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/driver.png"
+        },
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/snake.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/detective.png"
+        },
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "TAF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/house.png"
+        }
+      ],
+      [
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/roof.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        },
+        {
+          "str": "????????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/palace.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "?????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/driver.png"
+        },
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/snake.png"
+        }
+      ],
+      [
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "TAF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/house.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/detective.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/whell.png"
+        },
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/roof.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        },
+        {
+          "str": "????????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/palace.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/snake.png"
+        },
+        {
+          "str": "?????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/driver.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        },
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/roof.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "SHIN_SOFIT",
+              "pos": 1,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/detective.png"
+        },
+        {
+          "str": "??????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "TAF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/house.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/nadneda.png"
+        },
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "AIN",
+              "pos": 1,
+              "symbol": "?"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/shoes.png"
+        }
+      ],
+      [
+        {
+          "str": "????????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/palace.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        }
+      ],
+      [
+        {
+          "str": "??????????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "KOF",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 1,
+              "sound": "KUBUZ",
+              "symbol": "??"
+            },
+            {
+              "name": "KOF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/bottle.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/stage.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "GIMEL",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/whell.png"
+        },
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/wave.png"
+        }
+      ]
+    ],
+    [
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "HOLAM",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/baloon.png"
+        },
+        {
+          "str": "??????????",
+          "letters": [
+            {
+              "name": "VEIT",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "KOF",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 1,
+              "sound": "KUBUZ",
+              "symbol": "??"
+            },
+            {
+              "name": "KOF",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/bottle.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/dwarf.png"
+        },
+        {
+          "str": "????",
+          "letters": [
+            {
+              "name": "GIMEL",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "LAMED",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/wave.png"
+        }
+      ],
+      [
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "DALET",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/nadneda.png"
+        },
+        {
+          "str": "?????????",
+          "letters": [
+            {
+              "name": "NUN",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "AIN",
+              "pos": 1,
+              "symbol": "?"
+            },
+            {
+              "name": "LAMED",
+              "pos": 1,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "HIRIK",
+              "symbol": "??"
+            },
+            {
+              "name": "MEM_SOFIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/shoes.png"
+        }
+      ],
+      [
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "NUN",
+              "pos": 1,
+              "sound": "KAMATZ",
+              "symbol": "??"
+            },
+            {
+              "name": "VEIT",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/rabbit.png"
+        },
+        {
+          "str": "???????",
+          "letters": [
+            {
+              "name": "ALEF",
+              "pos": 0,
+              "sound": "PATAH",
+              "symbol": "??"
+            },
+            {
+              "name": "RESH",
+              "pos": 1,
+              "sound": "SHVA",
+              "symbol": "??"
+            },
+            {
+              "name": "YUD",
+              "pos": 1,
+              "sound": "TZERE",
+              "symbol": "??"
+            },
+            {
+              "name": "HE",
+              "pos": 2,
+              "sound": null,
+              "symbol": "?"
+            }
+          ],
+          "level": 1,
+          "imgPath": "/assets/lion-small.png"
+        }
+      ]
+    ]
+  ]
+}

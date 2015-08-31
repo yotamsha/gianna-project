@@ -59,13 +59,13 @@ npm test
 
 ### TODOS
 ```
-* Deploy the app
-* stabilize the loading to find a game from offline generated possibilities.
-* Add Refresh button
 * Add link to the vocabulary.
 * Add menus to select a letter and a nikud.
+* add the predefined games to a single big json map according to the first letter
 * design the cards and the message box. (yoav)
+* Add a texts of the couple of words found - for memory game
 
+```
 
 
 [downloads-image]: http://img.shields.io/npm/dm/angular-require-typescript-seed.svg
